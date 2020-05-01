@@ -1,0 +1,20 @@
+includes:
+	- vendor/phpstan/phpstan/conf/bleedingEdge.neon
+
+parameters:
+    level: max
+    paths: [src, tests]
+    tmpDir: '%rootDir%/../../../.cache/phpstan'
+    exceptionRules:
+        reportUnusedCatchesOfUncheckedExceptions: false
+        ignoreDescriptiveUncheckedExceptions: true
+        reportCheckedThrowsInGlobalScope: true
+        uncheckedExceptions:
+            - LogicException
+            - ArithmeticError
+        methodWhitelist:
+            PHPUnit\Framework\TestCase: '#^(test|(setup|setupbeforeclass|teardown|teardownafterclass)$)#i'
+    excludes_analyse:
+        - */src/Croct/Sniffs/Methods/CamelCapsMethodNameSniff.php
+        - */src/Croct/Sniffs/Whitespace/ObjectOperatorIndentSniff.php
+        - */tests/Integration/*

@@ -1,0 +1,87 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Example;
+
+use Croct\Sniffs\Spacing\ControlStructureSniff;
+use Fancy\TestCase;
+
+/**
+ * Description
+ *
+ * @author Invalid
+ * @since 0.1
+ */
+class Example implements \IteratorAggregate
+{
+    /**
+     * Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec mi congue, fringilla turpis id, tempor arcu.
+     */
+    private const VERSION = \PHP_VERSION - (\PHP_MINOR_VERSION * 100) - \PHP_PATCH_VERSION;
+
+    /** @var int|null */
+    private $foo;
+
+    /** @var array<string> */
+    private $bar;
+
+    /** @var bool */
+    private $baz;
+
+    /** @var ControlStructureSniff|int|string|null */
+    private $baxBax;
+
+    public function __construct(?int $foo = null, array $bar = [], bool $baz = false, $baxBax = 'unused')
+    {
+        $this->foo = $foo;
+        $this->bar = $bar;
+        $this->baz = $baz;
+        $this->baxBax = $baxBax;
+    }
+
+    /**
+     * Description
+     *
+     * @return int|null
+     */
+    public function getFoo() : ?int
+    {
+        return $this->foo;
+    }
+
+    /**
+     * @return iterable
+     */
+    public function getIterator() : array
+    {
+        \assert($this->bar !== null);
+        return new \ArrayIterator($this->bar);
+    }
+
+    public function isBaz() : bool
+    {
+        [$foo, $bar, $baz] = $this->bar;
+
+        return $this->baz;
+    }
+
+    public function mangleBar(int $length) : void
+    {
+        if (!$this->baz) {
+            throw new \InvalidArgumentException();
+        }
+
+        $this->bar = (string) $this->baxBax ?? \substr($this->bar, \strlen($this->bar - $length));
+    }
+
+    public static function getMinorVersion() : int
+    {
+        return self::VERSION;
+    }
+
+    public static function getTestCase() : TestCase
+    {
+        return new TestCase();
+    }
+}

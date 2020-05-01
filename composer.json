@@ -1,0 +1,58 @@
+{
+  "name": "croct/coding-standard",
+  "type": "phpcodesniffer-standard",
+  "description": "A set of Code Sniffer rules applied to all Croct PHP projects.",
+  "keywords": [
+    "croct",
+    "coding",
+    "standard",
+    "phpcs"
+  ],
+  "homepage": "https://github.com/croct-tech/coding-standard-php",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Marcos Passos",
+      "homepage": "https://github.com/marcospassos"
+    }
+  ],
+  "require": {
+    "php": "^7.4",
+    "slevomat/coding-standard": "^6.1.5",
+    "squizlabs/php_codesniffer": "^3.5.4"
+  },
+  "require-dev": {
+    "ergebnis/composer-normalize": "^2.5",
+    "pepakriz/phpstan-exception-rules": "^0.10",
+    "phpstan/extension-installer": "^1.0.3",
+    "phpstan/phpstan": "^0.12",
+    "phpstan/phpstan-deprecation-rules": "^0.12",
+    "phpstan/phpstan-phpunit": "^0.12",
+    "phpstan/phpstan-strict-rules": "^0.12",
+    "phpunit/phpunit": "^9.0.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Croct\\CodingStandard\\CodeSniffer\\Croct\\": "src/Croct"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Croct\\CodingStandard\\Tests\\": "tests/"
+    },
+    "files": [
+      "vendor/squizlabs/php_codesniffer/autoload.php"
+    ]
+  },
+  "prefer-stable": true,
+  "scripts": {
+    "test": [
+      "composer validate",
+      "composer normalize --dry-run",
+      "mkdir -p .cache",
+      "phpcs",
+      "phpstan analyse",
+      "./run-sniffs-tests.sh"
+    ]
+  }
+}
