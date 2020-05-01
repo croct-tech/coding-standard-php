@@ -1,0 +1,192 @@
+name: Validations
+
+on:
+  push:
+    tags-ignore:
+      - '**'
+    branches:
+      - master
+  pull_request:
+    types:
+      - synchronize
+      - opened
+
+jobs:
+  composer:
+    runs-on: ubuntu-latest
+    container:
+      image: crocttech/evaluation-base-image:latest
+    env:
+      PACKAGE: coding-standard
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Composer cache
+        uses: actions/cache@v1
+        with:
+          key: composer-${{ hashFiles('**/composer.lock') }}
+          path: ${{ github.workspace }}/.cache
+      - name: Vendor cache
+        uses: actions/cache@v1
+        with:
+          key: vendor-${{ hashFiles('**/composer.lock') }}
+          path: ${{ github.workspace }}/vendor
+      - name: Tools cache
+        uses: actions/cache@v1
+        with:
+          key: tools
+          path: ${{ github.workspace }}/packages/croct/${{ env.PACKAGE }}/.cache
+
+      - name: Install dependencies
+        env:
+          COMPOSER_CACHE_DIR: ${{ github.workspace }}/.cache
+        run: composer install --no-progress --no-interaction --prefer-dist --optimize-autoloader
+
+      - name: Validate composer
+        env:
+          COMPOSER_CACHE_DIR: ${{ github.workspace }}/.cache
+        run: composer validate
+
+      - name: Normali composer
+        env:
+          COMPOSER_CACHE_DIR: ${{ github.workspace }}/.cache
+        run: composer normalize --dry-run
+
+  sniff:
+    runs-on: ubuntu-latest
+    container:
+      image: crocttech/evaluation-base-image:latest
+    env:
+      PACKAGE: coding-standard
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Composer cache
+        uses: actions/cache@v1
+        with:
+          key: composer-${{ hashFiles('**/composer.lock') }}
+          path: ${{ github.workspace }}/.cache
+      - name: Vendor cache
+        uses: actions/cache@v1
+        with:
+          key: vendor-${{ hashFiles('**/composer.lock') }}
+          path: ${{ github.workspace }}/vendor
+      - name: Tools cache
+        uses: actions/cache@v1
+        with:
+          key: tools
+          path: ${{ github.workspace }}/packages/croct/${{ env.PACKAGE }}/.cache
+
+      - name: Install dependencies
+        env:
+          COMPOSER_CACHE_DIR: ${{ github.workspace }}/.cache
+        run: composer install --no-progress --no-interaction --prefer-dist --optimize-autoloader
+
+      - run: ./run-sniffs-tests.sh
+
+  phpunit:
+    runs-on: ubuntu-latest
+    container:
+      image: crocttech/evaluation-base-image:latest
+    env:
+      PACKAGE: coding-standard
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Composer cache
+        uses: actions/cache@v1
+        with:
+          key: composer-${{ hashFiles('**/composer.lock') }}
+          path: ${{ github.workspace }}/.cache
+      - name: Vendor cache
+        uses: actions/cache@v1
+        with:
+          key: vendor-${{ hashFiles('**/composer.lock') }}
+          path: ${{ github.workspace }}/vendor
+      - name: Tools cache
+        uses: actions/cache@v1
+        with:
+          key: tools
+          path: ${{ github.workspace }}/packages/croct/${{ env.PACKAGE }}/.cache
+
+      - name: Install dependencies
+        env:
+          COMPOSER_CACHE_DIR: ${{ github.workspace }}/.cache
+        run: composer install --no-progress --no-interaction --prefer-dist --optimize-autoloader
+
+      - run: mkdir -p ~/artifacts/phpunit
+      - name: phpunit
+        run: ./vendor/bin/phpunit --coverage-clover ${{ github.workspace }}/coverage.xml
+
+      - uses: paambaati/codeclimate-action@v2.5.4
+        env:
+          CC_TEST_REPORTER_ID: fc90a33fa141f616a470c627134102bd36536b469e2925da35c4d500b46e2be4
+        with:
+          coverageCommand: echo "Coverage upload"
+          coverageLocations: ./coverage.xml:Clover
+
+  phpstan:
+    runs-on: ubuntu-latest
+    container:
+      image: crocttech/evaluation-base-image:latest
+    env:
+      PACKAGE: coding-standard
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Composer cache
+        uses: actions/cache@v1
+        with:
+          key: composer-${{ hashFiles('**/composer.lock') }}
+          path: ${{ github.workspace }}/.cache
+      - name: Vendor cache
+        uses: actions/cache@v1
+        with:
+          key: vendor-${{ hashFiles('**/composer.lock') }}
+          path: ${{ github.workspace }}/vendor
+      - name: Tools cache
+        uses: actions/cache@v1
+        with:
+          key: tools
+          path: ${{ github.workspace }}/packages/croct/${{ env.PACKAGE }}/.cache
+
+      - name: Install dependencies
+        env:
+          COMPOSER_CACHE_DIR: ${{ github.workspace }}/.cache
+        run: composer install --no-progress --no-interaction --prefer-dist --optimize-autoloader
+
+      - name: phpstan
+        run: ./vendor/bin/phpstan analyse -l max --memory-limit=1G src tests
+
+  phpcs:
+    runs-on: ubuntu-latest
+    container:
+      image: crocttech/evaluation-base-image:latest
+    env:
+      PACKAGE: coding-standard
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Composer cache
+        uses: actions/cache@v1
+        with:
+          key: composer-${{ hashFiles('**/composer.lock') }}
+          path: ${{ github.workspace }}/.cache
+      - name: Vendor cache
+        uses: actions/cache@v1
+        with:
+          key: vendor-${{ hashFiles('**/composer.lock') }}
+          path: ${{ github.workspace }}/vendor
+      - name: Tools cache
+        uses: actions/cache@v1
+        with:
+          key: tools
+          path: ${{ github.workspace }}/packages/croct/${{ env.PACKAGE }}/.cache
+
+      - name: Install dependencies
+        env:
+          COMPOSER_CACHE_DIR: ${{ github.workspace }}/.cache
+        run: composer install --no-progress --no-interaction --prefer-dist --optimize-autoloader
+
+      - name: phpcs
+        run: ./vendor/bin/phpcs -d memory_limit=1G
