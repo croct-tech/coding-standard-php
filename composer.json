@@ -33,12 +33,12 @@
   },
   "autoload": {
     "psr-4": {
-      "Croct\\CodingStandard\\CodeSniffer\\Croct\\": "src/Croct"
+      "Croct\\": "src/Croct/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Croct\\CodingStandard\\Tests\\": "tests/"
+      "Croct\\Tests\\": "tests/"
     },
     "files": [
       "vendor/squizlabs/php_codesniffer/autoload.php"
