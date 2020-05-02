@@ -16,5 +16,5 @@ parameters:
             PHPUnit\Framework\TestCase: '#^(test|(setup|setupbeforeclass|teardown|teardownafterclass)$)#i'
     excludes_analyse:
         - */src/Croct/Sniffs/Methods/CamelCapsMethodNameSniff.php
-        - */src/Croct/Sniffs/Whitespace/ObjectOperatorIndentSniff.php
         - */tests/Integration/*
+        - */tests/fixtures/*
