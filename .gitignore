@@ -5,4 +5,5 @@
 /phpcs.log
 /phpstan.neon
 /phpunit.xml
+/coverage.xml
 /tests/Integration/tmp
