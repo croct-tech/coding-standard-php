@@ -114,16 +114,15 @@ jobs:
           COMPOSER_CACHE_DIR: ${{ github.workspace }}/.cache
         run: composer install --no-progress --no-interaction --prefer-dist --optimize-autoloader
 
-      - run: mkdir -p ~/artifacts/phpunit
       - name: phpunit
-        run: ./vendor/bin/phpunit --coverage-clover ${{ github.workspace }}/coverage.xml
+        run: ./vendor/bin/phpunit --coverage-clover ./coverage.xml
 
-      - uses: paambaati/codeclimate-action@v2.5.4
+      - uses: paambaati/codeclimate-action@v2.6.0
         env:
           CC_TEST_REPORTER_ID: fc90a33fa141f616a470c627134102bd36536b469e2925da35c4d500b46e2be4
         with:
-          coverageCommand: echo "Coverage upload"
-          coverageLocations: ./coverage.xml:Clover
+          coverageCommand: sed -i "s~$(pwd)/~~" coverage.xml
+          coverageLocations: ./coverage.xml:clover
 
   phpstan:
     runs-on: ubuntu-latest
