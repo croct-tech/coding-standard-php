@@ -15,9 +15,7 @@ jobs:
   composer:
     runs-on: ubuntu-latest
     container:
-      image: crocttech/evaluation-base-image:latest
-    env:
-      PACKAGE: coding-standard
+      image: crocttech/php-base-image:latest
     steps:
       - uses: actions/checkout@v1
 
@@ -35,12 +33,14 @@ jobs:
         uses: actions/cache@v1
         with:
           key: tools
-          path: ${{ github.workspace }}/packages/croct/${{ env.PACKAGE }}/.cache
+          path: ${{ github.workspace }}/.cache
 
       - name: Install dependencies
         env:
           COMPOSER_CACHE_DIR: ${{ github.workspace }}/.cache
-        run: composer install --no-progress --no-interaction --prefer-dist --optimize-autoloader
+        run: |-
+          composer config --global --auth http-basic.composer.croct.tech githubactions ${{ secrets.COMPOSER_TOKEN }}
+          composer install --no-progress --no-interaction --prefer-dist --optimize-autoloader
 
       - name: Validate composer
         env:
@@ -55,7 +55,7 @@ jobs:
   sniff:
     runs-on: ubuntu-latest
     container:
-      image: crocttech/evaluation-base-image:latest
+      image: crocttech/php-base-image:latest
     env:
       PACKAGE: coding-standard
     steps:
@@ -75,21 +75,21 @@ jobs:
         uses: actions/cache@v1
         with:
           key: tools
-          path: ${{ github.workspace }}/packages/croct/${{ env.PACKAGE }}/.cache
+          path: ${{ github.workspace }}/.cache
 
       - name: Install dependencies
         env:
           COMPOSER_CACHE_DIR: ${{ github.workspace }}/.cache
-        run: composer install --no-progress --no-interaction --prefer-dist --optimize-autoloader
+        run: |-
+          composer config --global --auth http-basic.composer.croct.tech githubactions ${{ secrets.COMPOSER_TOKEN }}
+          composer install --no-progress --no-interaction --prefer-dist --optimize-autoloader
 
       - run: ./run-sniffs-tests.sh
 
   phpunit:
     runs-on: ubuntu-latest
     container:
-      image: crocttech/evaluation-base-image:latest
-    env:
-      PACKAGE: coding-standard
+      image: crocttech/php-base-image:latest
     steps:
       - uses: actions/checkout@v1
 
@@ -107,19 +107,21 @@ jobs:
         uses: actions/cache@v1
         with:
           key: tools
-          path: ${{ github.workspace }}/packages/croct/${{ env.PACKAGE }}/.cache
+          path: ${{ github.workspace }}/.cache
 
       - name: Install dependencies
         env:
           COMPOSER_CACHE_DIR: ${{ github.workspace }}/.cache
-        run: composer install --no-progress --no-interaction --prefer-dist --optimize-autoloader
+        run: |-
+          composer config --global --auth http-basic.composer.croct.tech githubactions ${{ secrets.COMPOSER_TOKEN }}
+          composer install --no-progress --no-interaction --prefer-dist --optimize-autoloader
 
       - name: phpunit
         run: ./vendor/bin/phpunit --coverage-clover ./coverage.xml
 
       - uses: paambaati/codeclimate-action@v2.6.0
         env:
-          CC_TEST_REPORTER_ID: fc90a33fa141f616a470c627134102bd36536b469e2925da35c4d500b46e2be4
+          CC_TEST_REPORTER_ID: ${{ secrets.CODECLIMATE_TESTREPORTER_ID }}
         with:
           coverageCommand: sed -i "s~$(pwd)/~~" coverage.xml
           coverageLocations: ./coverage.xml:clover
@@ -127,9 +129,7 @@ jobs:
   phpstan:
     runs-on: ubuntu-latest
     container:
-      image: crocttech/evaluation-base-image:latest
-    env:
-      PACKAGE: coding-standard
+      image: crocttech/php-base-image:latest
     steps:
       - uses: actions/checkout@v1
 
@@ -147,12 +147,14 @@ jobs:
         uses: actions/cache@v1
         with:
           key: tools
-          path: ${{ github.workspace }}/packages/croct/${{ env.PACKAGE }}/.cache
+          path: ${{ github.workspace }}/.cache
 
       - name: Install dependencies
         env:
           COMPOSER_CACHE_DIR: ${{ github.workspace }}/.cache
-        run: composer install --no-progress --no-interaction --prefer-dist --optimize-autoloader
+        run: |-
+          composer config --global --auth http-basic.composer.croct.tech githubactions ${{ secrets.COMPOSER_TOKEN }}
+          composer install --no-progress --no-interaction --prefer-dist --optimize-autoloader
 
       - name: phpstan
         run: ./vendor/bin/phpstan analyse -l max --memory-limit=1G src tests
@@ -160,9 +162,7 @@ jobs:
   phpcs:
     runs-on: ubuntu-latest
     container:
-      image: crocttech/evaluation-base-image:latest
-    env:
-      PACKAGE: coding-standard
+      image: crocttech/php-base-image:latest
     steps:
       - uses: actions/checkout@v1
 
@@ -180,12 +180,14 @@ jobs:
         uses: actions/cache@v1
         with:
           key: tools
-          path: ${{ github.workspace }}/packages/croct/${{ env.PACKAGE }}/.cache
+          path: ${{ github.workspace }}/.cache
 
       - name: Install dependencies
         env:
           COMPOSER_CACHE_DIR: ${{ github.workspace }}/.cache
-        run: composer install --no-progress --no-interaction --prefer-dist --optimize-autoloader
+        run: |-
+          composer config --global --auth http-basic.composer.croct.tech githubactions ${{ secrets.COMPOSER_TOKEN }}
+          composer install --no-progress --no-interaction --prefer-dist --optimize-autoloader
 
       - name: phpcs
         run: ./vendor/bin/phpcs -d memory_limit=1G

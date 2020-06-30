@@ -1,6 +1,6 @@
 <p align="center">
     <a href="https://croct.com">
-        <img src="https://github.com/croct-tech/repository-template-php/raw/master/images/logo.svg" alt="Croct" width="80" height="80" />
+        <img src=“https://cdn.croct.io/brand/logo/repo-icon-green.svg” alt=“Croct” height=“80”/>
     </a>
     <br />
     <strong>PHP Coding Standard</strong>
@@ -15,11 +15,11 @@
     <img alt="License" src="https://img.shields.io/badge/license-proprietary-lightgrey" />
     <br />
     <br />
-    <a href="https://github.com/croct-tech/coding-standard-php/releases">Releases</a>
+    <a href="https://github.com/croct-tech/project-php/releases">📦 Releases</a>
     ·
-    <a href="https://github.com/croct-tech/coding-standard-php/issues">Report Bug</a>
+    <a href="https://github.com/croct-tech/project-php/issues">🐞 Report Bug</a>
     ·
-    <a href="https://github.com/croct-tech/coding-standard-php/issues">Request Feature</a>
+    <a href="https://github.com/croct-tech/project-php/issues">✨ Request Feature</a>
 </p>
 
 ## Installation
