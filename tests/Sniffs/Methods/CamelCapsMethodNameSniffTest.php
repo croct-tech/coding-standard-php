@@ -6,6 +6,9 @@ namespace Croct\Tests\Sniffs\Methods;
 
 use Croct\Tests\Sniffs\TestCase;
 
+/**
+ * @covers \Croct\Sniffs\Methods\CamelCapsMethodNameSniff
+ */
 final class CamelCapsMethodNameSniffTest extends TestCase
 {
     public function testNoErrors() : void

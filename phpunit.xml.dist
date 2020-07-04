@@ -7,6 +7,7 @@
          beStrictAboutOutputDuringTests="true"
          beStrictAboutTestsThatDoNotTestAnything="true"
          beStrictAboutTodoAnnotatedTests="true"
+         forceCoversAnnotation="true"
          failOnRisky="true"
          failOnWarning="true"
          cacheResult="true"
@@ -19,8 +20,8 @@
     </php>
 
     <testsuites>
-        <testsuite name="unit">
-            <directory>./tests</directory>
+        <testsuite name="Croct PHPCS Coding Standard Test Suite">
+            <directory>./tests/</directory>
         </testsuite>
     </testsuites>
 
