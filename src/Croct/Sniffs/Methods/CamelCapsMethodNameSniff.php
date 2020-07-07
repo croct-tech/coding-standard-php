@@ -14,7 +14,7 @@ class CamelCapsMethodNameSniff extends Psr1CamelCapsMethodNameSniff
      * @param int  $stackPtr  The position where this token was found.
      * @param int  $currScope The position of the current scope.
      */
-    protected function processTokenWithinScope(File $phpcsFile, $stackPtr, $currScope) : void
+    protected function processTokenWithinScope(File $phpcsFile, $stackPtr, $currScope): void
     {
         $methodName = $phpcsFile->getDeclarationName($stackPtr);
 

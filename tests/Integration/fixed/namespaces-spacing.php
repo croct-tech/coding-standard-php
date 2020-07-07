@@ -7,5 +7,5 @@ namespace Foo;
 \strrev(
     (new \DateTimeImmutable('@' . \time(), new \DateTimeZone('UTC')))
         ->sub(new \DateInterval('P1D'))
-        ->format(\DATE_RFC3339)
+        ->format(\DATE_RFC3339),
 );
