@@ -6,32 +6,30 @@ FILE                                                  ERRORS  WARNINGS
 array-indentation.php                                 10      0
 assignment-operators.php                              4       0
 chained-method-call.php                               2       0
-class-references.php                                  9       0
-concatenation-spacing.php                             29      0
+class-references.php                                  10      0
+concatenation-spacing.php                             35      0
 constants-var.php                                     4       0
-doc-comment-spacing.php                               14      0
-example-class.php                                     23      1
-forbidden-comments.php                                4       0
+doc-comment-spacing.php                               22      0
+example-class.php                                     26      1
+forbidden-comments.php                                6       0
 forbidden-functions.php                               6       0
-global-constants.php                                  1       0
-global-functions.php                                  1       0
-LowCaseTypes.php                                      2       0
-namespaces-spacing.php                                2       0
-new-with-parentheses.php                              14      0
+LowCaseTypes.php                                      4       0
+namespaces-spacing.php                                3       0
+new-with-parentheses.php                              16      0
 null-coalesce-operator.php                            3       0
 optimized-functions.php                               1       0
 return-type-spacing-on-closures.php                   21      0
-return-type-spacing-on-methods.php                    17      0
-semicolon-spacing.php                                 3       0
-static-closures.php                                   1       0
-test-case.php                                         8       0
-traits-uses.php                                       10      0
-UnusedVariables.php                                   1       0
+return-type-spacing-on-methods.php                    32      0
+semicolon-spacing.php                                 4       0
+static-closures.php                                   3       0
+test-case.php                                         10      0
+traits-uses.php                                       7       0
+UnusedVariables.php                                   3       0
 useless-semicolon.php                                 2       0
 ----------------------------------------------------------------------
-A TOTAL OF 192 ERRORS AND 1 WARNING WERE FOUND IN 25 FILES
+A TOTAL OF 234 ERRORS AND 1 WARNING WERE FOUND IN 23 FILES
 ----------------------------------------------------------------------
-PHPCBF CAN FIX 166 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
+PHPCBF CAN FIX 190 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
 ----------------------------------------------------------------------
 
 

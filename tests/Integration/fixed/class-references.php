@@ -13,7 +13,7 @@ class Bar extends Foo
     /**
      * @return iterable<string>
      */
-    public function names() : iterable
+    public function names(): iterable
     {
         yield self::class;
         yield self::class;

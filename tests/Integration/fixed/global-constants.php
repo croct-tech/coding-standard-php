@@ -4,4 +4,6 @@ declare(strict_types=1);
 
 namespace Foo;
 
-\filter_var(1, \FILTER_VALIDATE_INT);
+use const FILTER_VALIDATE_INT;
+
+\filter_var(1, FILTER_VALIDATE_INT);

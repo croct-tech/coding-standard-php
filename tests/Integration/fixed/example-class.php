@@ -6,6 +6,7 @@ namespace Example;
 
 use Croct\Sniffs\Spacing\ControlStructureSniff;
 use Fancy\TestCase;
+use const PHP_RELEASE_VERSION as PHP_PATCH_VERSION;
 
 /**
  * Description
@@ -18,7 +19,7 @@ class Example implements \IteratorAggregate
     /**
      * Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec mi congue, fringilla turpis id, tempor arcu.
      */
-    private const VERSION = \PHP_VERSION - (\PHP_MINOR_VERSION * 100) - \PHP_PATCH_VERSION;
+    private const VERSION = \PHP_VERSION - (PHP_MINOR_VERSION * 100) - PHP_PATCH_VERSION;
 
     /** @var int|null */
     private $foo;
@@ -45,7 +46,7 @@ class Example implements \IteratorAggregate
      *
      * @return int|null
      */
-    public function getFoo() : ?int
+    public function getFoo(): ?int
     {
         return $this->foo;
     }
@@ -53,20 +54,21 @@ class Example implements \IteratorAggregate
     /**
      * @return iterable
      */
-    public function getIterator() : array
+    public function getIterator(): array
     {
-        \assert($this->bar !== null);
+        assert($this->bar !== null);
+
         return new \ArrayIterator($this->bar);
     }
 
-    public function isBaz() : bool
+    public function isBaz(): bool
     {
         [$foo, $bar, $baz] = $this->bar;
 
         return $this->baz;
     }
 
-    public function mangleBar(int $length) : void
+    public function mangleBar(int $length): void
     {
         if (!$this->baz) {
             throw new \InvalidArgumentException();
@@ -75,12 +77,12 @@ class Example implements \IteratorAggregate
         $this->bar = (string) $this->baxBax ?? \substr($this->bar, \strlen($this->bar - $length));
     }
 
-    public static function getMinorVersion() : int
+    public static function getMinorVersion(): int
     {
         return self::VERSION;
     }
 
-    public static function getTestCase() : TestCase
+    public static function getTestCase(): TestCase
     {
         return new TestCase();
     }
