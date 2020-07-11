@@ -23,13 +23,15 @@
 </p>
 
 ## Installation
-Use the package manage [Composer](https://getcomposer.org) to install the package:
+
+We recommend using the package manager [Composer](https://getcomposer.org) to install the package:
 
 ```sh
 composer require croct/coding-standard
 ```
 
 ## Basic usage
+
 Run the following command to check if the project adheres to the coding standard:
 
 ```sh
@@ -37,6 +39,7 @@ Run the following command to check if the project adheres to the coding standard
 ```
 
 ## Contributing
+
 Contributions to the package are always welcome! 
 
 - Report any bugs or issues on the [issue tracker](https://github.com/croct-tech/coding-standard-php/issues).
@@ -58,6 +61,7 @@ composer test
 ```
 
 ## Copyright Notice
+
 Copyright © 2015-2020 Croct Limited, All Rights Reserved.
 
 All information contained herein is, and remains the property of Croct Limited. The intellectual, design and technical concepts contained herein are proprietary to Croct Limited s and may be covered by U.S. and Foreign Patents, patents in process, and are protected by trade secret or copyright law. Dissemination of this information or reproduction of this material is strictly forbidden unless prior written permission is obtained from Croct Limited.
