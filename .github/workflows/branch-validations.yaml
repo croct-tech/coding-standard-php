@@ -12,6 +12,12 @@ on:
       - opened
 
 jobs:
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: symfonycorp/security-checker-action@v1
+
   composer:
     runs-on: ubuntu-latest
     container:
