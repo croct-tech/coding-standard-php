@@ -29,7 +29,8 @@
     "phpstan/phpstan-deprecation-rules": "^0.12",
     "phpstan/phpstan-phpunit": "^0.12",
     "phpstan/phpstan-strict-rules": "^0.12",
-    "phpunit/phpunit": "^9.0.1"
+    "phpunit/phpunit": "^9.0.1",
+    "sensiolabs/security-checker": "^6.0.3"
   },
   "autoload": {
     "psr-4": {
@@ -52,7 +53,8 @@
       "mkdir -p .cache",
       "phpcs",
       "phpstan analyse",
-      "./run-sniffs-tests.sh"
+      "./run-sniffs-tests.sh",
+      "security-checker security:check"
     ]
   }
 }
