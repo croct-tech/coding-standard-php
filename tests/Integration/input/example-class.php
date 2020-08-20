@@ -49,7 +49,6 @@ class Example implements \IteratorAggregate
     {
         return $this->foo;
     }
-
     /**
      * @return iterable
      */
@@ -58,6 +57,7 @@ class Example implements \IteratorAggregate
         assert($this->bar !== null);
         return new \ArrayIterator($this->bar);
     }
+
 
     public function isBaz() : bool
     {

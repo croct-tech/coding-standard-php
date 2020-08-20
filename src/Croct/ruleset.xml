@@ -163,6 +163,13 @@
             <property name="maxLinesCountBeforeWithoutComment" value="1"/>
         </properties>
     </rule>
+    <!-- Checks that there is a certain number of blank lines between methods -->
+    <rule ref="SlevomatCodingStandard.Classes.MethodSpacing">
+        <properties>
+            <property name="minLinesCount" value="1"/>
+            <property name="maxLinesCount" value="1"/>
+        </properties>
+    </rule>
     <!-- Enforces method signature to be splitted to more lines so each parameter is on its own line -->
     <rule ref="SlevomatCodingStandard.Classes.RequireMultiLineMethodSignature">
         <properties>

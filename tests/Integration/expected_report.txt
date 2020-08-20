@@ -10,7 +10,7 @@ class-references.php                                  10      0
 concatenation-spacing.php                             35      0
 constants-var.php                                     4       0
 doc-comment-spacing.php                               22      0
-example-class.php                                     28      1
+example-class.php                                     30      1
 forbidden-comments.php                                6       0
 forbidden-functions.php                               6       0
 LowCaseTypes.php                                      4       0
@@ -27,9 +27,9 @@ traits-uses.php                                       7       0
 UnusedVariables.php                                   3       0
 useless-semicolon.php                                 2       0
 ----------------------------------------------------------------------
-A TOTAL OF 236 ERRORS AND 1 WARNING WERE FOUND IN 23 FILES
+A TOTAL OF 238 ERRORS AND 1 WARNING WERE FOUND IN 23 FILES
 ----------------------------------------------------------------------
-PHPCBF CAN FIX 192 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
+PHPCBF CAN FIX 194 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
 ----------------------------------------------------------------------
 
 
