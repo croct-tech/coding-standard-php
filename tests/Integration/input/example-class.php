@@ -23,9 +23,9 @@ class Example implements \IteratorAggregate
 
     /** @var null|int */
     private $foo;
-
     /** @var string[] */
     private $bar;
+
 
     /** @var bool */
     private $baz;
