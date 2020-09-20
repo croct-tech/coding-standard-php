@@ -53,7 +53,7 @@ jobs:
           COMPOSER_CACHE_DIR: ${{ github.workspace }}/.cache
         run: composer validate
 
-      - name: Normali composer
+      - name: Normalize composer
         env:
           COMPOSER_CACHE_DIR: ${{ github.workspace }}/.cache
         run: composer normalize --dry-run
