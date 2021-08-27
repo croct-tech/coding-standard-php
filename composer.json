@@ -17,7 +17,7 @@
     }
   ],
   "require": {
-    "php": "^7.4",
+    "php": "^7.4 || ^8.0",
     "slevomat/coding-standard": "^7.0.14",
     "squizlabs/php_codesniffer": "^3.6.0"
   },
@@ -29,8 +29,7 @@
     "phpstan/phpstan-deprecation-rules": "^0.12",
     "phpstan/phpstan-phpunit": "^0.12",
     "phpstan/phpstan-strict-rules": "^0.12",
-    "phpunit/phpunit": "^9.5.8",
-    "sensiolabs/security-checker": "^6.0.3"
+    "phpunit/phpunit": "^9.5.8"
   },
   "autoload": {
     "psr-4": {
@@ -53,8 +52,7 @@
       "mkdir -p .cache",
       "phpcs",
       "phpstan analyse",
-      "./run-sniffs-tests.sh",
-      "security-checker security:check"
+      "./run-sniffs-tests.sh"
     ]
   }
 }
