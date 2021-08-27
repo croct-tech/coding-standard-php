@@ -26,17 +26,17 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Composer cache
-        uses: actions/cache@v1
+        uses: actions/cache@v2
         with:
           key: composer-${{ hashFiles('**/composer.lock') }}
           path: ${{ github.workspace }}/.cache
       - name: Vendor cache
-        uses: actions/cache@v1
+        uses: actions/cache@v2
         with:
           key: vendor-${{ hashFiles('**/composer.lock') }}
           path: ${{ github.workspace }}/vendor
       - name: Tools cache
-        uses: actions/cache@v1
+        uses: actions/cache@v2
         with:
           key: tools
           path: ${{ github.workspace }}/.cache
@@ -68,17 +68,17 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Composer cache
-        uses: actions/cache@v1
+        uses: actions/cache@v2
         with:
           key: composer-${{ hashFiles('**/composer.lock') }}
           path: ${{ github.workspace }}/.cache
       - name: Vendor cache
-        uses: actions/cache@v1
+        uses: actions/cache@v2
         with:
           key: vendor-${{ hashFiles('**/composer.lock') }}
           path: ${{ github.workspace }}/vendor
       - name: Tools cache
-        uses: actions/cache@v1
+        uses: actions/cache@v2
         with:
           key: tools
           path: ${{ github.workspace }}/.cache
@@ -100,17 +100,17 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Composer cache
-        uses: actions/cache@v1
+        uses: actions/cache@v2
         with:
           key: composer-${{ hashFiles('**/composer.lock') }}
           path: ${{ github.workspace }}/.cache
       - name: Vendor cache
-        uses: actions/cache@v1
+        uses: actions/cache@v2
         with:
           key: vendor-${{ hashFiles('**/composer.lock') }}
           path: ${{ github.workspace }}/vendor
       - name: Tools cache
-        uses: actions/cache@v1
+        uses: actions/cache@v2
         with:
           key: tools
           path: ${{ github.workspace }}/.cache
@@ -140,17 +140,17 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Composer cache
-        uses: actions/cache@v1
+        uses: actions/cache@v2
         with:
           key: composer-${{ hashFiles('**/composer.lock') }}
           path: ${{ github.workspace }}/.cache
       - name: Vendor cache
-        uses: actions/cache@v1
+        uses: actions/cache@v2
         with:
           key: vendor-${{ hashFiles('**/composer.lock') }}
           path: ${{ github.workspace }}/vendor
       - name: Tools cache
-        uses: actions/cache@v1
+        uses: actions/cache@v2
         with:
           key: tools
           path: ${{ github.workspace }}/.cache
@@ -173,17 +173,17 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Composer cache
-        uses: actions/cache@v1
+        uses: actions/cache@v2
         with:
           key: composer-${{ hashFiles('**/composer.lock') }}
           path: ${{ github.workspace }}/.cache
       - name: Vendor cache
-        uses: actions/cache@v1
+        uses: actions/cache@v2
         with:
           key: vendor-${{ hashFiles('**/composer.lock') }}
           path: ${{ github.workspace }}/vendor
       - name: Tools cache
-        uses: actions/cache@v1
+        uses: actions/cache@v2
         with:
           key: tools
           path: ${{ github.workspace }}/.cache
