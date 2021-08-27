@@ -1,5 +1,5 @@
 {
   "extends": [
-    "github>croct-tech/renovate-presets:language"
+    "github>croct-tech/renovate-presets:php"
   ]
 }
