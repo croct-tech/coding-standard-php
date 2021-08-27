@@ -335,7 +335,7 @@
     <!-- Disallow unused variables passed to closures via `use` -->
     <rule ref="SlevomatCodingStandard.Functions.UnusedInheritedVariablePassedToClosure"/>
     <!-- Enforces trailing commas in multi-line calls -->
-    <rule ref="SlevomatCodingStandard.Functions.TrailingCommaInCall"/>
+    <rule ref="SlevomatCodingStandard.Functions.RequireTrailingCommaInCall"/>
 
 
     <!-- Require use statements to be alphabetically sorted -->
