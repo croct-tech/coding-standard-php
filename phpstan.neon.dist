@@ -7,7 +7,6 @@ parameters:
     tmpDir: '%rootDir%/../../../.cache/phpstan'
     exceptionRules:
         reportUnusedCatchesOfUncheckedExceptions: false
-        ignoreDescriptiveUncheckedExceptions: true
         reportCheckedThrowsInGlobalScope: true
         uncheckedExceptions:
             - LogicException
