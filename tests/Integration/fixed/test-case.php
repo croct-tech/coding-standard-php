@@ -22,7 +22,7 @@ final class TestCase extends BaseTestCase
     /**
      * @before
      */
-    public function createDependencies()
+    public function createDependencies(): void
     {
     }
 
@@ -32,7 +32,7 @@ final class TestCase extends BaseTestCase
      *
      * @uses MyClass::__construct
      */
-    public function methodShouldDoStuff()
+    public function methodShouldDoStuff(): void
     {
     }
 }

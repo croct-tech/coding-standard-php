@@ -21,7 +21,7 @@ jobs:
   composer:
     runs-on: ubuntu-latest
     container:
-      image: crocttech/php-base-image:php8
+      image: crocttech/php-base-image:php8-dev
     steps:
       - uses: actions/checkout@v2
 
@@ -61,7 +61,7 @@ jobs:
   sniff:
     runs-on: ubuntu-latest
     container:
-      image: crocttech/php-base-image:php8
+      image: crocttech/php-base-image:php8-dev
     env:
       PACKAGE: coding-standard
     steps:
@@ -95,7 +95,7 @@ jobs:
   phpunit:
     runs-on: ubuntu-latest
     container:
-      image: crocttech/php-base-image:php8
+      image: crocttech/php-base-image:php8-dev
     steps:
       - uses: actions/checkout@v2
 
@@ -135,7 +135,7 @@ jobs:
   phpstan:
     runs-on: ubuntu-latest
     container:
-      image: crocttech/php-base-image:php8
+      image: crocttech/php-base-image:php8-dev
     steps:
       - uses: actions/checkout@v2
 
@@ -168,7 +168,7 @@ jobs:
   phpcs:
     runs-on: ubuntu-latest
     container:
-      image: crocttech/php-base-image:php8
+      image: crocttech/php-base-image:php8-dev
     steps:
       - uses: actions/checkout@v2
 

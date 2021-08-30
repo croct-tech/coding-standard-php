@@ -317,6 +317,8 @@
     <rule ref="SlevomatCodingStandard.ControlStructures.UselessIfConditionWithReturn"/>
     <!-- Report useless ternary operator where both branches return true or false -->
     <rule ref="SlevomatCodingStandard.ControlStructures.UselessTernaryOperator"/>
+    <!-- Enforce null-safe operation whenever applicable -->
+    <rule ref="SlevomatCodingStandard.ControlStructures.RequireNullSafeObjectOperator"/>
 
     <!-- Checks fn declaration -->
     <rule ref="SlevomatCodingStandard.Functions.ArrowFunctionDeclaration">
@@ -334,6 +336,8 @@
     <rule ref="SlevomatCodingStandard.Functions.UselessParameterDefaultValue"/>
     <!-- Disallow unused variables passed to closures via `use` -->
     <rule ref="SlevomatCodingStandard.Functions.UnusedInheritedVariablePassedToClosure"/>
+    <!-- Enforces trailing commas in multi-line function declarations -->
+    <rule ref="SlevomatCodingStandard.Functions.DisallowTrailingCommaInDeclaration"/>
     <!-- Enforces trailing commas in multi-line calls -->
     <rule ref="SlevomatCodingStandard.Functions.RequireTrailingCommaInCall"/>
 
@@ -457,6 +461,19 @@
     </rule>
     <!-- Disallow useless `@var` for constants -->
     <rule ref="SlevomatCodingStandard.TypeHints.UselessConstantTypeHint"/>
+    <!-- Require specifying type hints for parameters -->
+    <rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHint"/>
+    <!-- Require specifying type hints for properties -->
+    <rule ref="SlevomatCodingStandard.TypeHints.PropertyTypeHint"/>
+    <!-- Require specifying type hints for return statement -->
+    <rule ref="SlevomatCodingStandard.TypeHints.ReturnTypeHint"/>
+    <!-- Enforce the format of union type hints -->
+    <rule ref="SlevomatCodingStandard.TypeHints.UnionTypeHintFormat">
+        <properties>
+            <property name="withSpaces" value="no"/>
+            <property name="shortNullable" value="yes"/>
+        </properties>
+    </rule>
 
     <!-- Checks duplicate spaces anywhere -->
     <rule ref="SlevomatCodingStandard.Whitespaces.DuplicateSpaces">
@@ -470,6 +487,8 @@
     <rule ref="SlevomatCodingStandard.Exceptions.DeadCatch"/>
     <!-- Force \Throwable in catch statement instead of \Exception -->
     <rule ref="SlevomatCodingStandard.Exceptions.ReferenceThrowableOnly"/>
+    <!-- Requires non-capturing catch when the variable with exception is not used -->
+    <rule ref="SlevomatCodingStandard.Exceptions.RequireNonCapturingCatch"/>
 
     <!-- Look for duplicate assignments to a variable -->
     <rule ref="SlevomatCodingStandard.Variables.DuplicateAssignmentToVariable" />

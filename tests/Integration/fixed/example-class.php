@@ -21,17 +21,14 @@ class Example implements \IteratorAggregate
      */
     private const VERSION = \PHP_VERSION - (PHP_MINOR_VERSION * 100) - PHP_PATCH_VERSION;
 
-    /** @var int|null */
-    private $foo;
+    private ?int $foo = null;
 
     /** @var array<string> */
-    private $bar;
+    private array $bar;
 
-    /** @var bool */
-    private $baz;
+    private bool $baz;
 
-    /** @var ControlStructureSniff|int|string|null */
-    private $baxBax;
+    private ControlStructureSniff|int|string|null $baxBax = null;
 
     public function __construct(?int $foo = null, array $bar = [], bool $baz = false, $baxBax = 'unused')
     {
@@ -43,8 +40,6 @@ class Example implements \IteratorAggregate
 
     /**
      * Description
-     *
-     * @return int|null
      */
     public function getFoo(): ?int
     {

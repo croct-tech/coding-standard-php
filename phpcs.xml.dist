@@ -9,10 +9,14 @@
     <arg name="cache" value=".cache/phpcs.cache.json"/>
     <arg name="basepath" value="."/>
     <arg name="extensions" value="php"/>
-    <arg name="colors" />
+    <arg name="colors"/>
     <arg value="p"/>
 
     <rule ref="Croct"/>
+
+    <rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHint.MissingNativeTypeHint">
+        <exclude-pattern>src/Croct/Sniffs/Methods/CamelCapsMethodNameSniff.php</exclude-pattern>
+    </rule>
 
     <file>src</file>
 </ruleset>
