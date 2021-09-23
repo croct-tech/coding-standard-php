@@ -40,7 +40,7 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
 
         if (\count($codesToCheck) > 0) {
             foreach (static::getSniffClassReflection()->getConstants() as $constantName => $constantValue) {
-                if (\strpos($constantName, 'CODE_') !== 0 || \in_array($constantValue, $codesToCheck, true)) {
+                if (!\str_starts_with($constantName, 'CODE_') || \in_array($constantValue, $codesToCheck, true)) {
                     continue;
                 }
 
@@ -184,7 +184,8 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
                 /** @var string $errorMessage */
                 $errorMessage = $error['message'];
 
-                if ($errorSource === $sniffCode && ($message === null || \strpos($errorMessage, $message) !== false)) {
+
+                if ($errorSource === $sniffCode && ($message === null || \str_contains($errorMessage, $message))) {
                     $hasError = true;
                     break;
                 }
