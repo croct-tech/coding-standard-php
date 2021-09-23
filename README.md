@@ -9,17 +9,19 @@
 </p>
 <p align="center">
     <img alt="Language" src="https://img.shields.io/badge/language-PHP-blue" />
-    <img alt="Build" src="https://github.com/croct-tech/coding-standard-php/workflows/Validations/badge.svg" />
+    <a href="https://github.com/croct-tech/coding-standard-php/actions/workflows/branch-validations.yaml">
+        <img alt="Build" src="https://github.com/croct-tech/coding-standard-php/actions/workflows/branch-validations.yaml/badge.svg" />
+    </a>
     <a href="https://codeclimate.com/repos/5eac65a1a17f91739f001f38/maintainability"><img alt="Maintainability" src="https://api.codeclimate.com/v1/badges/e4354f125f9d9201a69d/maintainability" /></a>
     <a href="https://codeclimate.com/repos/5eac65a1a17f91739f001f38/test_coverage"><img alt="Coverage" src="https://api.codeclimate.com/v1/badges/e4354f125f9d9201a69d/test_coverage" /></a>
     <img alt="License" src="https://img.shields.io/badge/license-proprietary-lightgrey" />
     <br />
     <br />
-    <a href="https://github.com/croct-tech/project-php/releases">📦 Releases</a>
+    <a href="https://github.com/croct-tech/coding-standard-php/releases">📦 Releases</a>
     ·
-    <a href="https://github.com/croct-tech/project-php/issues">🐞 Report Bug</a>
+    <a href="https://github.com/croct-tech/coding-standard-php/issues">🐞 Report Bug</a>
     ·
-    <a href="https://github.com/croct-tech/project-php/issues">✨ Request Feature</a>
+    <a href="https://github.com/croct-tech/coding-standard-php/issues">✨ Request Feature</a>
 </p>
 
 ## Installation
