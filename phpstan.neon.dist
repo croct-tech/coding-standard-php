@@ -5,15 +5,15 @@ parameters:
     level: max
     paths: [src, tests]
     tmpDir: '%rootDir%/../../../.cache/phpstan'
-    exceptionRules:
-        reportUnusedCatchesOfUncheckedExceptions: false
-        reportCheckedThrowsInGlobalScope: true
-        uncheckedExceptions:
+    exceptions:
+        implicitThrows: false
+        uncheckedExceptionClasses:
             - LogicException
             - ArithmeticError
-        methodWhitelist:
-            PHPUnit\Framework\TestCase: '#^(test|(setup|setupbeforeclass|teardown|teardownafterclass)$)#i'
-    excludes_analyse:
+        check:
+            missingCheckedExceptionInThrows: true
+            tooWideThrowType: true
+    excludePaths:
         - */src/Croct/Sniffs/Methods/CamelCapsMethodNameSniff.php
         - */tests/Integration/*
         - */tests/fixtures/*

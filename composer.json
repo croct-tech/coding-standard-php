@@ -23,7 +23,6 @@
   },
   "require-dev": {
     "ergebnis/composer-normalize": "^2.15",
-    "pepakriz/phpstan-exception-rules": "^0.11",
     "phpstan/extension-installer": "^1.1",
     "phpstan/phpstan": "^1.0",
     "phpstan/phpstan-deprecation-rules": "^1.0",
