@@ -208,6 +208,10 @@
                 "/>
                 <element value="
                     @template,
+                    @template-covariant,
+                "/>
+                <element value="
+                    @extends,
                     @implements,
                 "/>
                 <element value="
