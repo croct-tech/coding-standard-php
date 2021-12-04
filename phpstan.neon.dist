@@ -13,6 +13,10 @@ parameters:
         check:
             missingCheckedExceptionInThrows: true
             tooWideThrowType: true
+    ignoreErrors:
+        -
+            message: '#.+::test.+\(\) throws checked exception .+ but it''s missing from the PHPDoc @throws tag#'
+            path: %rootDir%/../../../tests
     excludePaths:
         - */src/Croct/Sniffs/Methods/CamelCapsMethodNameSniff.php
         - */tests/Integration/*

@@ -30,7 +30,9 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
         $codeSniffer->init();
 
         if (\count($sniffProperties) > 0) {
-            $codeSniffer->ruleset->ruleset[static::getSniffName()]['properties'] = $sniffProperties;
+            /** @var array<string, mixed> $ruleSet */
+            $ruleSet = $codeSniffer->ruleset->ruleset[static::getSniffName()];
+            $ruleSet['properties'] = $sniffProperties;
         }
 
         /** @var class-string<\PHP_CodeSniffer\Sniffs\Sniff> $sniffClassName */
@@ -39,6 +41,7 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
         $codeSniffer->ruleset->sniffs = [$sniffClassName => new $sniffClassName()];
 
         if (\count($codesToCheck) > 0) {
+            /** @var string $constantValue */
             foreach (static::getSniffClassReflection()->getConstants() as $constantName => $constantValue) {
                 if (!\str_starts_with($constantName, 'CODE_') || \in_array($constantValue, $codesToCheck, true)) {
                     continue;
@@ -46,7 +49,9 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
 
                 $key = \sprintf('%s.%s', static::getSniffName(), $constantValue);
 
-                $codeSniffer->ruleset->ruleset[$key]['severity'] = 0;
+                /** @var array<string, mixed> $ruleSet */
+                $ruleSet = $codeSniffer->ruleset->ruleset[$key];
+                $ruleSet['severity'] = 0;
             }
         }
 
@@ -153,8 +158,6 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
 
     /**
      * @return ReflectionClass<Sniff>
-     *
-     * @throws \ReflectionException
      */
     protected static function getSniffClassReflection() : ReflectionClass
     {
