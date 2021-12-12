@@ -1,21 +1,21 @@
 {
   "name": "croct/coding-standard",
-  "type": "phpcodesniffer-standard",
   "description": "A set of Code Sniffer rules applied to all Croct PHP projects.",
+  "license": "proprietary",
+  "type": "phpcodesniffer-standard",
   "keywords": [
     "croct",
     "coding",
     "standard",
     "phpcs"
   ],
-  "homepage": "https://github.com/croct-tech/coding-standard-php",
-  "license": "proprietary",
   "authors": [
     {
       "name": "Marcos Passos",
       "homepage": "https://github.com/marcospassos"
     }
   ],
+  "homepage": "https://github.com/croct-tech/coding-standard-php",
   "require": {
     "php": "^8.0",
     "slevomat/coding-standard": "^7.0",
@@ -30,6 +30,7 @@
     "phpstan/phpstan-strict-rules": "^1.0",
     "phpunit/phpunit": "^9.5"
   },
+  "prefer-stable": true,
   "autoload": {
     "psr-4": {
       "Croct\\": "src/Croct/"
@@ -43,7 +44,6 @@
       "vendor/squizlabs/php_codesniffer/autoload.php"
     ]
   },
-  "prefer-stable": true,
   "scripts": {
     "test": [
       "composer validate",
