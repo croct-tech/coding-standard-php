@@ -304,8 +304,8 @@
         <properties>
             <property name="linesCountAfterWhenLastInCaseOrDefault" value="1"/>
             <property name="linesCountAfterWhenLastInLastCaseOrDefault" value="0"/>
-            <property name="linesCountAfterControlStructure" value="1"/>
-            <property name="linesCountAfterLastControlStructure" value="0"/>
+            <property name="linesCountAfter" value="1"/>
+            <property name="linesCountAfterLast" value="0"/>
         </properties>
     </rule>
     <!-- Checks and fixes language construct used with parentheses -->
@@ -467,29 +467,29 @@
     <!-- Require specifying type hints for parameters -->
     <rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHint">
         <properties>
-            <!-- enforces to transform `@param string|int` into native `string|int` typehint -->
+            <!-- Enforces to transform `@param string|int` into native `string|int` typehint -->
             <property name="enableUnionTypeHint" value="true"/>
-            <!-- enforces to transform `@param mixed` into native `mixed` typehint -->
+            <!-- Enforces to transform `@param mixed` into native `mixed` typehint -->
             <property name="enableMixedTypeHint" value="true"/>
         </properties>
     </rule>
     <!-- Require specifying type hints for properties -->
     <rule ref="SlevomatCodingStandard.TypeHints.PropertyTypeHint">
         <properties>
-            <!-- enforces to transform `@var string|int` into native `string|int` typehint -->
+            <!-- Enforces to transform `@var string|int` into native `string|int` typehint -->
             <property name="enableUnionTypeHint" value="true"/>
-            <!-- enforces to transform `@var mixed` into native `mixed` typehint -->
+            <!-- Enforces to transform `@var mixed` into native `mixed` typehint -->
             <property name="enableMixedTypeHint" value="true"/>
         </properties>
     </rule>
     <!-- Require specifying type hints for return statement -->
     <rule ref="SlevomatCodingStandard.TypeHints.ReturnTypeHint">
         <properties>
-            <!-- enforces to transform `@return string|int` into native `strixng|int` typehint -->
+            <!-- Enforces to transform `@return string|int` into native `strixng|int` typehint -->
             <property name="enableUnionTypeHint" value="true"/>
-            <!-- enforces to transform `@return mixed` into native `mixed` typehint -->
+            <!-- Enforces to transform `@return mixed` into native `mixed` typehint -->
             <property name="enableMixedTypeHint" value="true"/>
-            <!-- enforces to transform `@return static` into native `static` typehint -->
+            <!-- Enforces to transform `@return static` into native `static` typehint -->
             <property name="enableStaticTypeHint" value="true"/>
         </properties>
     </rule>
