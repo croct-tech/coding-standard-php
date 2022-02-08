@@ -440,9 +440,9 @@
     <!-- Require presence of `declare(strict_types=1)` -->
     <rule ref="SlevomatCodingStandard.TypeHints.DeclareStrictTypes">
         <properties>
+            <property name="linesCountBeforeDeclare" value="1"/>
             <property name="linesCountAfterDeclare" value="1"/>
             <property name="spacesCountAroundEqualsSign" value="0"/>
-            <property name="linesCountAfterDeclare" value="1"/>
         </properties>
     </rule>
     <!-- Force generic type hint syntax -->
@@ -485,7 +485,7 @@
     <!-- Require specifying type hints for return statement -->
     <rule ref="SlevomatCodingStandard.TypeHints.ReturnTypeHint">
         <properties>
-            <!-- Enforces to transform `@return string|int` into native `strixng|int` typehint -->
+            <!-- Enforces to transform `@return string|int` into native `string|int` typehint -->
             <property name="enableUnionTypeHint" value="true"/>
             <!-- Enforces to transform `@return mixed` into native `mixed` typehint -->
             <property name="enableMixedTypeHint" value="true"/>
