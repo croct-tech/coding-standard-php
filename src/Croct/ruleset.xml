@@ -351,9 +351,6 @@
     <rule ref="SlevomatCodingStandard.Functions.DisallowTrailingCommaInDeclaration"/>
     <!-- Enforces trailing commas in multi-line calls -->
     <rule ref="SlevomatCodingStandard.Functions.RequireTrailingCommaInCall"/>
-    <!-- Enforces trailing commas in multi-line declarations -->
-    <rule ref="SlevomatCodingStandard.Functions.RequireTrailingCommaInDeclaration" />
-
     <!-- Require use statements to be alphabetically sorted -->
     <rule ref="SlevomatCodingStandard.Namespaces.AlphabeticallySortedUses">
         <properties>
