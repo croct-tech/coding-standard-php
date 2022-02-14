@@ -464,29 +464,29 @@
     <!-- Require specifying type hints for parameters -->
     <rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHint">
         <properties>
-            <!-- Enforces to transform `@param string|int` into native `string|int` typehint -->
+            <!-- Requires native `string|int` type hint instead of `@param string|int` annotation -->
             <property name="enableUnionTypeHint" value="true"/>
-            <!-- Enforces to transform `@param mixed` into native `mixed` typehint -->
+            <!-- Requires native `mixed` type hint instead of `@param mixed` annotation -->
             <property name="enableMixedTypeHint" value="true"/>
         </properties>
     </rule>
     <!-- Require specifying type hints for properties -->
     <rule ref="SlevomatCodingStandard.TypeHints.PropertyTypeHint">
         <properties>
-            <!-- Enforces to transform `@var string|int` into native `string|int` typehint -->
+            <!-- Requires native `string|int` type hint instead of `@var string|int` annotation -->
             <property name="enableUnionTypeHint" value="true"/>
-            <!-- Enforces to transform `@var mixed` into native `mixed` typehint -->
+            <!-- Requires native `mixed` type hint instead of `@var mixed` annotation -->
             <property name="enableMixedTypeHint" value="true"/>
         </properties>
     </rule>
     <!-- Require specifying type hints for return statement -->
     <rule ref="SlevomatCodingStandard.TypeHints.ReturnTypeHint">
         <properties>
-            <!-- Enforces to transform `@return string|int` into native `string|int` typehint -->
+            <!-- Requires native `string|int` type hint instead of `@return string|int` annotation -->
             <property name="enableUnionTypeHint" value="true"/>
-            <!-- Enforces to transform `@return mixed` into native `mixed` typehint -->
+            <!-- Requires native `mixed` type hint instead of `@return mixed` annotation -->
             <property name="enableMixedTypeHint" value="true"/>
-            <!-- Enforces to transform `@return static` into native `static` typehint -->
+            <!-- Requires native `static` type hint instead of `@return static` annotation -->
             <property name="enableStaticTypeHint" value="true"/>
         </properties>
     </rule>
