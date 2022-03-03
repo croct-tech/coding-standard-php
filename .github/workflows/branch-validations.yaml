@@ -15,7 +15,7 @@ jobs:
   security:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: symfonycorp/security-checker-action@v2
 
   composer:
@@ -23,7 +23,7 @@ jobs:
     container:
       image: crocttech/php-base-image:php8-dev
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Composer cache
         uses: actions/cache@v2
@@ -65,7 +65,7 @@ jobs:
     env:
       PACKAGE: coding-standard
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Composer cache
         uses: actions/cache@v2
@@ -97,7 +97,7 @@ jobs:
     container:
       image: crocttech/php-base-image:php8-dev
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Composer cache
         uses: actions/cache@v2
@@ -137,7 +137,7 @@ jobs:
     container:
       image: crocttech/php-base-image:php8-dev
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Composer cache
         uses: actions/cache@v2
@@ -170,7 +170,7 @@ jobs:
     container:
       image: crocttech/php-base-image:php8-dev
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Composer cache
         uses: actions/cache@v2
