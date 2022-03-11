@@ -28,46 +28,56 @@ class Test
 
     public function f(
         int $a,
+        int $b,
         int $c,
         int $d,
         int $e,
-        int $b
+        int $f,
+        int $g,
     ):void {
     }
 
     public function g(
         int $a,
+        int $b,
         int $c,
         int $d,
         int $e,
-        int $b
+        int $f,
+        int $g,
     ) :void {
     }
 
     public function h(
         int $a,
+        int $b,
         int $c,
         int $d,
         int $e,
-        int $b
+        int $f,
+        int $g,
     )     :void {
     }
 
     public function i(
         int $a,
+        int $b,
         int $c,
         int $d,
         int $e,
-        int $b
+        int $f,
+        int $g,
     ): void {
     }
 
     public function j(
         int $a,
+        int $b,
         int $c,
         int $d,
         int $e,
-        int $b
+        int $f,
+        int $g,
     ):     void {
     }
 }

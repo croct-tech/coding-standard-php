@@ -44,6 +44,13 @@
       "vendor/squizlabs/php_codesniffer/autoload.php"
     ]
   },
+  "config": {
+    "allow-plugins": {
+      "ergebnis/composer-normalize": true,
+      "phpstan/extension-installer": true,
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
+  },
   "scripts": {
     "test": [
       "composer validate",

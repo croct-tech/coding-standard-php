@@ -19,45 +19,55 @@ static function (): void {
 
 static function (
     int $a,
+    int $b,
     int $c,
     int $d,
     int $e,
-    int $b
+    int $f,
+    int $g,
 ): void {
 }
 
 static function (
     int $a,
+    int $b,
     int $c,
     int $d,
     int $e,
-    int $b
+    int $f,
+    int $g,
 ): void {
 }
 
 static function (
     int $a,
+    int $b,
     int $c,
     int $d,
     int $e,
-    int $b
+    int $f,
+    int $g,
 ): void {
 }
 
 static function (
     int $a,
+    int $b,
     int $c,
     int $d,
     int $e,
-    int $b
+    int $f,
+    int $g,
 ): void {
 }
 
 static function (
     int $a,
+    int $b,
     int $c,
     int $d,
     int $e,
-    int $b
+    int $f,
+    int $g,
 ): void {
 }
