@@ -19,7 +19,7 @@ new-with-parentheses.php                              16      0
 null-coalesce-operator.php                            3       0
 optimized-functions.php                               1       0
 return-type-spacing-on-closures.php                   21      0
-return-type-spacing-on-methods.php                    32      0
+return-type-spacing-on-methods.php                    27      0
 semicolon-spacing.php                                 4       0
 static-closures.php                                   3       0
 test-case.php                                         12      0
@@ -27,9 +27,9 @@ traits-uses.php                                       7       0
 UnusedVariables.php                                   3       0
 useless-semicolon.php                                 2       0
 ----------------------------------------------------------------------
-A TOTAL OF 248 ERRORS AND 1 WARNING WERE FOUND IN 23 FILES
+A TOTAL OF 243 ERRORS AND 1 WARNING WERE FOUND IN 23 FILES
 ----------------------------------------------------------------------
-PHPCBF CAN FIX 201 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
+PHPCBF CAN FIX 196 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
 ----------------------------------------------------------------------
 
 

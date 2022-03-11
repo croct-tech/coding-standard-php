@@ -26,23 +26,58 @@ class Test
     {
     }
 
-    public function f(int $a, int $c, int $d, int $e, int $b): void
-    {
+    public function f(
+        int $a,
+        int $b,
+        int $c,
+        int $d,
+        int $e,
+        int $f,
+        int $g,
+    ): void {
     }
 
-    public function g(int $a, int $c, int $d, int $e, int $b): void
-    {
+    public function g(
+        int $a,
+        int $b,
+        int $c,
+        int $d,
+        int $e,
+        int $f,
+        int $g,
+    ): void {
     }
 
-    public function h(int $a, int $c, int $d, int $e, int $b): void
-    {
+    public function h(
+        int $a,
+        int $b,
+        int $c,
+        int $d,
+        int $e,
+        int $f,
+        int $g,
+    ): void {
     }
 
-    public function i(int $a, int $c, int $d, int $e, int $b): void
-    {
+    public function i(
+        int $a,
+        int $b,
+        int $c,
+        int $d,
+        int $e,
+        int $f,
+        int $g,
+    ): void {
     }
 
-    public function j(int $a, int $c, int $d, int $e, int $b): void
-    {
+    public function j(
+        int $a,
+        int $b,
+        int $c,
+        int $d,
+        int $e,
+        int $f,
+        int $g,
+    ): void {
     }
 }

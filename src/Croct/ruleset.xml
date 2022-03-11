@@ -153,7 +153,12 @@
         </properties>
     </rule>
     <!-- Class names should be referenced via ::class constant when possible -->
-    <rule ref="SlevomatCodingStandard.Classes.ModernClassNameReference"/>
+    <rule ref="SlevomatCodingStandard.Classes.ModernClassNameReference">
+        <properties>
+            <!-- Enable `::class` on all objects -->
+            <property name="enableOnObjects" value="true"/>
+        </properties>
+    </rule>
     <!-- Checks that there is a certain number of blank lines between properties -->
     <rule ref="SlevomatCodingStandard.Classes.PropertySpacing">
         <properties>
@@ -190,6 +195,8 @@
     <rule ref="SlevomatCodingStandard.Classes.SuperfluousTraitNaming"/>
     <!-- Disallow uses of multiple traits separated by comma -->
     <rule ref="SlevomatCodingStandard.Classes.TraitUseDeclaration"/>
+    <!-- Disallow uses of constructor property promotion -->
+    <rule ref="SlevomatCodingStandard.Classes.DisallowConstructorPropertyPromotion"/>
 
     <!-- Require specific order of phpDoc annotations with empty newline between specific groups -->
     <rule ref="SlevomatCodingStandard.Commenting.DocCommentSpacing">
@@ -297,8 +304,8 @@
         <properties>
             <property name="linesCountAfterWhenLastInCaseOrDefault" value="1"/>
             <property name="linesCountAfterWhenLastInLastCaseOrDefault" value="0"/>
-            <property name="linesCountAfterControlStructure" value="1"/>
-            <property name="linesCountAfterLastControlStructure" value="0"/>
+            <property name="linesCountAfter" value="1"/>
+            <property name="linesCountAfterLast" value="0"/>
         </properties>
     </rule>
     <!-- Checks and fixes language construct used with parentheses -->
@@ -341,11 +348,9 @@
     <!-- Disallow unused variables passed to closures via `use` -->
     <rule ref="SlevomatCodingStandard.Functions.UnusedInheritedVariablePassedToClosure"/>
     <!-- Enforces trailing commas in multi-line function declarations -->
-    <rule ref="SlevomatCodingStandard.Functions.DisallowTrailingCommaInDeclaration"/>
+    <rule ref="SlevomatCodingStandard.Functions.RequireTrailingCommaInDeclaration"/>
     <!-- Enforces trailing commas in multi-line calls -->
     <rule ref="SlevomatCodingStandard.Functions.RequireTrailingCommaInCall"/>
-
-
     <!-- Require use statements to be alphabetically sorted -->
     <rule ref="SlevomatCodingStandard.Namespaces.AlphabeticallySortedUses">
         <properties>
@@ -432,18 +437,9 @@
     <!-- Require presence of `declare(strict_types=1)` -->
     <rule ref="SlevomatCodingStandard.TypeHints.DeclareStrictTypes">
         <properties>
-            <property
-                    name="newlinesCountBetweenOpenTagAndDeclare"
-                    value="2"
-            />
-            <property
-                    name="spacesCountAroundEqualsSign"
-                    value="0"
-            />
-            <property
-                    name="newlinesCountAfterDeclare"
-                    value="2"
-            />
+            <property name="linesCountBeforeDeclare" value="1"/>
+            <property name="linesCountAfterDeclare" value="1"/>
+            <property name="spacesCountAroundEqualsSign" value="0"/>
         </properties>
     </rule>
     <!-- Force generic type hint syntax -->
@@ -466,11 +462,34 @@
     <!-- Disallow useless `@var` for constants -->
     <rule ref="SlevomatCodingStandard.TypeHints.UselessConstantTypeHint"/>
     <!-- Require specifying type hints for parameters -->
-    <rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHint"/>
+    <rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHint">
+        <properties>
+            <!-- Requires native `string|int` type hint instead of `@param string|int` annotation -->
+            <property name="enableUnionTypeHint" value="true"/>
+            <!-- Requires native `mixed` type hint instead of `@param mixed` annotation -->
+            <property name="enableMixedTypeHint" value="true"/>
+        </properties>
+    </rule>
     <!-- Require specifying type hints for properties -->
-    <rule ref="SlevomatCodingStandard.TypeHints.PropertyTypeHint"/>
+    <rule ref="SlevomatCodingStandard.TypeHints.PropertyTypeHint">
+        <properties>
+            <!-- Requires native `string|int` type hint instead of `@var string|int` annotation -->
+            <property name="enableUnionTypeHint" value="true"/>
+            <!-- Requires native `mixed` type hint instead of `@var mixed` annotation -->
+            <property name="enableMixedTypeHint" value="true"/>
+        </properties>
+    </rule>
     <!-- Require specifying type hints for return statement -->
-    <rule ref="SlevomatCodingStandard.TypeHints.ReturnTypeHint"/>
+    <rule ref="SlevomatCodingStandard.TypeHints.ReturnTypeHint">
+        <properties>
+            <!-- Requires native `string|int` type hint instead of `@return string|int` annotation -->
+            <property name="enableUnionTypeHint" value="true"/>
+            <!-- Requires native `mixed` type hint instead of `@return mixed` annotation -->
+            <property name="enableMixedTypeHint" value="true"/>
+            <!-- Requires native `static` type hint instead of `@return static` annotation -->
+            <property name="enableStaticTypeHint" value="true"/>
+        </properties>
+    </rule>
     <!-- Enforce the format of union type hints -->
     <rule ref="SlevomatCodingStandard.TypeHints.UnionTypeHintFormat">
         <properties>
