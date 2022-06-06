@@ -21,7 +21,7 @@ jobs:
   composer:
     runs-on: ubuntu-latest
     container:
-      image: crocttech/php-base-image:php8-dev
+      image: crocttech/php-base-image:php8.1-dev
     steps:
       - uses: actions/checkout@v3
 
@@ -45,7 +45,7 @@ jobs:
         env:
           COMPOSER_CACHE_DIR: ${{ github.workspace }}/.cache
         run: |-
-          composer config --global --auth http-basic.composer.croct.tech githubactions ${{ secrets.COMPOSER_TOKEN }}
+          composer config --global --auth http-basic.croct.repo.repman.io token "${{ secrets.REPMAN_TOKEN }}"
           composer install --no-progress --no-interaction --prefer-dist --optimize-autoloader
 
       - name: Validate composer
@@ -61,7 +61,7 @@ jobs:
   sniff:
     runs-on: ubuntu-latest
     container:
-      image: crocttech/php-base-image:php8-dev
+      image: crocttech/php-base-image:php8.1-dev
     env:
       PACKAGE: coding-standard
     steps:
@@ -87,7 +87,7 @@ jobs:
         env:
           COMPOSER_CACHE_DIR: ${{ github.workspace }}/.cache
         run: |-
-          composer config --global --auth http-basic.composer.croct.tech githubactions ${{ secrets.COMPOSER_TOKEN }}
+          composer config --global --auth http-basic.croct.repo.repman.io token "${{ secrets.REPMAN_TOKEN }}"
           composer install --no-progress --no-interaction --prefer-dist --optimize-autoloader
 
       - run: ./run-sniffs-tests.sh
@@ -95,7 +95,7 @@ jobs:
   phpunit:
     runs-on: ubuntu-latest
     container:
-      image: crocttech/php-base-image:php8-dev
+      image: crocttech/php-base-image:php8.1-dev
     steps:
       - uses: actions/checkout@v3
 
@@ -119,7 +119,7 @@ jobs:
         env:
           COMPOSER_CACHE_DIR: ${{ github.workspace }}/.cache
         run: |-
-          composer config --global --auth http-basic.composer.croct.tech githubactions ${{ secrets.COMPOSER_TOKEN }}
+          composer config --global --auth http-basic.croct.repo.repman.io token "${{ secrets.REPMAN_TOKEN }}"
           composer install --no-progress --no-interaction --prefer-dist --optimize-autoloader
 
       - name: phpunit
@@ -135,7 +135,7 @@ jobs:
   phpstan:
     runs-on: ubuntu-latest
     container:
-      image: crocttech/php-base-image:php8-dev
+      image: crocttech/php-base-image:php8.1-dev
     steps:
       - uses: actions/checkout@v3
 
@@ -159,7 +159,7 @@ jobs:
         env:
           COMPOSER_CACHE_DIR: ${{ github.workspace }}/.cache
         run: |-
-          composer config --global --auth http-basic.composer.croct.tech githubactions ${{ secrets.COMPOSER_TOKEN }}
+          composer config --global --auth http-basic.croct.repo.repman.io token "${{ secrets.REPMAN_TOKEN }}"
           composer install --no-progress --no-interaction --prefer-dist --optimize-autoloader
 
       - name: phpstan
@@ -168,7 +168,7 @@ jobs:
   phpcs:
     runs-on: ubuntu-latest
     container:
-      image: crocttech/php-base-image:php8-dev
+      image: crocttech/php-base-image:php8.1-dev
     steps:
       - uses: actions/checkout@v3
 
@@ -192,7 +192,7 @@ jobs:
         env:
           COMPOSER_CACHE_DIR: ${{ github.workspace }}/.cache
         run: |-
-          composer config --global --auth http-basic.composer.croct.tech githubactions ${{ secrets.COMPOSER_TOKEN }}
+          composer config --global --auth http-basic.croct.repo.repman.io token "${{ secrets.REPMAN_TOKEN }}"
           composer install --no-progress --no-interaction --prefer-dist --optimize-autoloader
 
       - name: phpcs
