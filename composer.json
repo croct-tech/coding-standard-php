@@ -11,23 +11,24 @@
   ],
   "authors": [
     {
-      "name": "Marcos Passos",
-      "homepage": "https://github.com/marcospassos"
+      "name": "Croct",
+      "email": "lib+coding-standard-php@croct.com",
+      "homepage": "https://croct.com"
     }
   ],
   "homepage": "https://github.com/croct-tech/coding-standard-php",
   "require": {
-    "php": "^8.0",
-    "slevomat/coding-standard": "^7.0",
+    "php": "^8.1",
+    "slevomat/coding-standard": "^7.2",
     "squizlabs/php_codesniffer": "^3.6"
   },
   "require-dev": {
-    "ergebnis/composer-normalize": "^2.15",
+    "ergebnis/composer-normalize": "^2.28",
     "phpstan/extension-installer": "^1.1",
-    "phpstan/phpstan": "^1.0",
+    "phpstan/phpstan": "^1.7",
     "phpstan/phpstan-deprecation-rules": "^1.0",
-    "phpstan/phpstan-phpunit": "^1.0",
-    "phpstan/phpstan-strict-rules": "^1.0",
+    "phpstan/phpstan-phpunit": "^1.1",
+    "phpstan/phpstan-strict-rules": "^1.2",
     "phpunit/phpunit": "^9.5"
   },
   "prefer-stable": true,

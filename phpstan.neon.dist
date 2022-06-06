@@ -21,3 +21,7 @@ parameters:
         - */src/Croct/Sniffs/Methods/CamelCapsMethodNameSniff.php
         - */tests/Integration/*
         - */tests/fixtures/*
+    checkTooWideReturnTypesInProtectedAndPublicMethods: true
+    checkUninitializedProperties: true
+    checkMissingCallableSignature: true
+    checkGenericClassInNonGenericObjectType: true
