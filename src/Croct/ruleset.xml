@@ -452,7 +452,7 @@
     <rule ref="SlevomatCodingStandard.TypeHints.NullableTypeForNullDefaultValue"/>
     <!-- Require one space between typehint and variable, require no space between nullability sign and typehint -->
     <rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHintSpacing"/>
-    <rule ref="SlevomatCodingStandard.TypeHints.PropertyTypeHintSpacing"/>
+    <rule ref="SlevomatCodingStandard.Classes.PropertyDeclaration"/>
     <!-- Require space around colon in return types -->
     <rule ref="SlevomatCodingStandard.TypeHints.ReturnTypeHintSpacing">
         <properties>
