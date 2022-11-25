@@ -125,7 +125,7 @@ jobs:
       - name: phpunit
         run: ./vendor/bin/phpunit --coverage-clover ./coverage.xml
 
-      - uses: paambaati/codeclimate-action@v3.1.1
+      - uses: paambaati/codeclimate-action@v3.2.0
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CODECLIMATE_TESTREPORTER_ID }}
         with:
