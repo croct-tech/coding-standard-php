@@ -325,22 +325,22 @@
         },
         {
             "name": "ergebnis/composer-normalize",
-            "version": "2.30.0",
+            "version": "2.30.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ergebnis/composer-normalize.git",
-                "reference": "ea2affd0635564ccabddca0427a26b2f38a545f0"
+                "reference": "54d58f7dc5517ae183ac2c06f1dcbd616876673c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ergebnis/composer-normalize/zipball/ea2affd0635564ccabddca0427a26b2f38a545f0",
-                "reference": "ea2affd0635564ccabddca0427a26b2f38a545f0",
+                "url": "https://api.github.com/repos/ergebnis/composer-normalize/zipball/54d58f7dc5517ae183ac2c06f1dcbd616876673c",
+                "reference": "54d58f7dc5517ae183ac2c06f1dcbd616876673c",
                 "shasum": ""
             },
             "require": {
                 "composer-plugin-api": "^2.0.0",
                 "ergebnis/json": "^1.0.1",
-                "ergebnis/json-normalizer": "~4.0.0",
+                "ergebnis/json-normalizer": "^4.0.2",
                 "ergebnis/json-printer": "^3.3.0",
                 "ext-json": "*",
                 "justinrainbow/json-schema": "^5.2.12",
@@ -394,7 +394,7 @@
                 "issues": "https://github.com/ergebnis/composer-normalize/issues",
                 "source": "https://github.com/ergebnis/composer-normalize"
             },
-            "time": "2023-02-26T17:34:31+00:00"
+            "time": "2023-02-27T17:23:42+00:00"
         },
         {
             "name": "ergebnis/json",
@@ -460,16 +460,16 @@
         },
         {
             "name": "ergebnis/json-normalizer",
-            "version": "4.0.0",
+            "version": "4.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ergebnis/json-normalizer.git",
-                "reference": "250f41057e1e62662c076d9c133fe487760c0c2d"
+                "reference": "15df99fbf454da13b31008795a7397d3d7d73bb4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ergebnis/json-normalizer/zipball/250f41057e1e62662c076d9c133fe487760c0c2d",
-                "reference": "250f41057e1e62662c076d9c133fe487760c0c2d",
+                "url": "https://api.github.com/repos/ergebnis/json-normalizer/zipball/15df99fbf454da13b31008795a7397d3d7d73bb4",
+                "reference": "15df99fbf454da13b31008795a7397d3d7d73bb4",
                 "shasum": ""
             },
             "require": {
@@ -524,7 +524,7 @@
                 "issues": "https://github.com/ergebnis/json-normalizer/issues",
                 "source": "https://github.com/ergebnis/json-normalizer"
             },
-            "time": "2023-02-26T10:58:43+00:00"
+            "time": "2023-02-27T17:17:30+00:00"
         },
         {
             "name": "ergebnis/json-pointer",
@@ -1641,16 +1641,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "9.6.3",
+            "version": "9.6.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "e7b1615e3e887d6c719121c6d4a44b0ab9645555"
+                "reference": "9125ee085b6d95e78277dc07aa1f46f9e0607b8d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/e7b1615e3e887d6c719121c6d4a44b0ab9645555",
-                "reference": "e7b1615e3e887d6c719121c6d4a44b0ab9645555",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/9125ee085b6d95e78277dc07aa1f46f9e0607b8d",
+                "reference": "9125ee085b6d95e78277dc07aa1f46f9e0607b8d",
                 "shasum": ""
             },
             "require": {
@@ -1723,7 +1723,7 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.6.3"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.6.4"
             },
             "funding": [
                 {
@@ -1739,7 +1739,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-02-04T13:37:15+00:00"
+            "time": "2023-02-27T13:06:37+00:00"
         },
         {
             "name": "sebastian/cli-parser",
