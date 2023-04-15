@@ -97,6 +97,9 @@ jobs:
     container:
       image: crocttech/php-base-image:php8.1-dev
     steps:
+      - name: Change owner of container working directory
+        run: chown root:root .
+
       - uses: actions/checkout@v3
 
       - name: Composer cache
