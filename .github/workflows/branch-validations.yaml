@@ -15,7 +15,7 @@ jobs:
   security:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: symfonycorp/security-checker-action@v5
 
   composer:
@@ -23,7 +23,7 @@ jobs:
     container:
       image: crocttech/php-base-image:php8.1-dev
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Composer cache
         uses: actions/cache@v3
@@ -65,7 +65,7 @@ jobs:
     env:
       PACKAGE: coding-standard
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Composer cache
         uses: actions/cache@v3
@@ -100,7 +100,7 @@ jobs:
       - name: Change owner of container working directory
         run: chown root:root .
 
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Composer cache
         uses: actions/cache@v3
@@ -140,7 +140,7 @@ jobs:
     container:
       image: crocttech/php-base-image:php8.1-dev
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Composer cache
         uses: actions/cache@v3
@@ -173,7 +173,7 @@ jobs:
     container:
       image: crocttech/php-base-image:php8.1-dev
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Composer cache
         uses: actions/cache@v3
