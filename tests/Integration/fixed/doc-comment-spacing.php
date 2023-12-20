@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Test;
 
+use PHPUnit\Framework\Attributes\UsesClass;
 use BarException;
 use FooException;
 
@@ -60,8 +61,8 @@ class Test
      *
      * @link https://example.com
      * @see  other
-     * @uses other
      */
+    #[UsesClass('other')]
     public function d(iterable $foo, iterable $bar): iterable
     {
     }
