@@ -9,7 +9,6 @@ use PHPUnit\Framework\Attributes\AfterClass;
 use PHPUnit\Framework\Attributes\Before;
 use PHPUnit\Framework\Attributes\UsesClass;
 use PHPUnit\Framework\Attributes\TestDox;
-use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase as BaseTestCase;
 
 /**
@@ -30,10 +29,8 @@ final class TestCase extends BaseTestCase
     {
     }
 
-    
     #[UsesClass(MyClass::__construct)]
     #[TestDox('The method should do stuff')]
-    #[Test]
     public function methodShouldDoStuff()
     {
     }

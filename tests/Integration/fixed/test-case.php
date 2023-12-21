@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Fancy;
 
-use PHPUnit\Framework\Attributes\BeforeClass;
 use PHPUnit\Framework\Attributes\AfterClass;
 use PHPUnit\Framework\Attributes\Before;
-use PHPUnit\Framework\Attributes\UsesClass;
+use PHPUnit\Framework\Attributes\BeforeClass;
 use PHPUnit\Framework\Attributes\TestDox;
+use PHPUnit\Framework\Attributes\UsesClass;
 use PHPUnit\Framework\TestCase as BaseTestCase;
 
 /**
@@ -27,7 +27,6 @@ final class TestCase extends BaseTestCase
     {
     }
 
-    
     #[UsesClass(MyClass::__construct)]
     #[TestDox('The method should do stuff')]
     public function methodShouldDoStuff(): void

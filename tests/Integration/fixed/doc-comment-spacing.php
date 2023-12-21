@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Test;
 
-use PHPUnit\Framework\Attributes\UsesClass;
 use BarException;
 use FooException;
+use PHPUnit\Framework\Attributes\UsesClass;
 
 class Test
 {
