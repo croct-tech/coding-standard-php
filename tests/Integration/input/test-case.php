@@ -30,6 +30,7 @@ final class TestCase extends BaseTestCase
     }
 
     #[UsesClass(MyClass::__construct)]
+
     #[TestDox('The method should do stuff')]
     public function methodShouldDoStuff()
     {
