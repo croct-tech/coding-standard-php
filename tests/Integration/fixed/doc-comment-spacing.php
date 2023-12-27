@@ -60,8 +60,7 @@ class Test
      *
      * @link https://example.com
      * @see  other
-     *
-     * @since Version 1.0
+     * @uses other
      */
     public function d(iterable $foo, iterable $bar): iterable
     {

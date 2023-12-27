@@ -45,7 +45,7 @@ class Test
      * @throws FooException
      * @deprecated
      * @param int[] $foo
-     * @since Version 1.0
+     * @uses other
      * @throws BarException
      * @return int[]
      * @ORM\Id
