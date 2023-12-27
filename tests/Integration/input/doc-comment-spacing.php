@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Test;
 
-use PHPUnit\Framework\Attributes\UsesClass;
 use BarException;
 use FooException;
 
@@ -46,6 +45,7 @@ class Test
      * @throws FooException
      * @deprecated
      * @param int[] $foo
+     * @since  Version 1.0
      * @throws BarException
      * @return int[]
      * @ORM\Id
@@ -58,7 +58,6 @@ class Test
      * @see  other
      *
      */
-    #[UsesClass('other')]
     public function d(iterable $foo, iterable $bar) : iterable
     {
     }
