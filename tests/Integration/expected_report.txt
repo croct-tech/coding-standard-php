@@ -22,14 +22,14 @@ return-type-spacing-on-closures.php                   21      0
 return-type-spacing-on-methods.php                    27      0
 semicolon-spacing.php                                 4       0
 static-closures.php                                   3       0
-test-case.php                                         10      0
+test-case.php                                         17      0
 traits-uses.php                                       7       0
 UnusedVariables.php                                   3       0
 useless-semicolon.php                                 2       0
 ----------------------------------------------------------------------
-A TOTAL OF 240 ERRORS AND 1 WARNING WERE FOUND IN 23 FILES
+A TOTAL OF 247 ERRORS AND 1 WARNING WERE FOUND IN 23 FILES
 ----------------------------------------------------------------------
-PHPCBF CAN FIX 194 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
+PHPCBF CAN FIX 201 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
 ----------------------------------------------------------------------
 
 

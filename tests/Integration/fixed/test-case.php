@@ -16,8 +16,8 @@ use PHPUnit\Framework\TestCase as BaseTestCase;
  */
 final class TestCase extends BaseTestCase
 {
-    #[BeforeClass]
     #[AfterClass]
+    #[BeforeClass]
     public static function doStuff(): void
     {
     }
@@ -27,9 +27,14 @@ final class TestCase extends BaseTestCase
     {
     }
 
-    #[UsesClass(MyClass::__construct)]
-
+    /**
+     * @see SomeClass
+     */
+    #[AfterClass]
+    #[Before]
     #[TestDox('The method should do stuff')]
+    #[UsesClass(MyClass::__construct)]
+    #[UsesClass(MyClass::someMethod)]
     public function methodShouldDoStuff(): void
     {
     }
