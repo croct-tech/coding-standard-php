@@ -293,6 +293,25 @@
     <!-- Require comments with single line written as one-liners -->
     <rule ref="SlevomatCodingStandard.Commenting.RequireOneLinePropertyDocComment"/>
 
+    <!-- Require attributes to have no blank lines between the attribute and its target -->
+    <rule ref="SlevomatCodingStandard.Attributes.AttributeAndTargetSpacing">
+        <properties>
+            <property name="linesCount" value="0"/>
+        </properties>
+    </rule>
+    <!-- Require attributes to be ordered alphabetically -->
+    <rule ref="SlevomatCodingStandard.Attributes.AttributesOrder">
+        <properties>
+            <property name="orderAlphabetically" value="true"/>
+        </properties>
+    </rule>
+    <!-- Disallows joining more than one element per attribute list (no #[One, Two]) -->
+    <rule ref="SlevomatCodingStandard.Attributes.DisallowAttributesJoining"/>
+    <!-- Disallows multiple attributes per line -->
+    <rule ref="SlevomatCodingStandard.Attributes.DisallowMultipleAttributesPerLine"/>
+    <!-- Require attributes to be always after doc comment -->
+    <rule ref="SlevomatCodingStandard.Attributes.RequireAttributeAfterDocComment"/>
+
     <!-- Disallows assignments in if, elseif and do-while loop conditions -->
     <rule ref="SlevomatCodingStandard.ControlStructures.AssignmentInCondition"/>
     <!-- Disallows use of continue without integer operand in switch because it emits a warning in PHP 7.3 and higher -->

@@ -35,7 +35,7 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
             $ruleSet['properties'] = $sniffProperties;
         }
 
-        /** @var class-string<\PHP_CodeSniffer\Sniffs\Sniff> $sniffClassName */
+        /** @var class-string<Sniff> $sniffClassName */
         $sniffClassName = static::getSniffClassName();
 
         $codeSniffer->ruleset->sniffs = [$sniffClassName => new $sniffClassName()];

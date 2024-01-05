@@ -4,11 +4,10 @@ declare(strict_types=1);
 
 namespace Croct\Tests\Sniffs\Methods;
 
+use PHPUnit\Framework\Attributes\CoversClass;
 use Croct\Tests\Sniffs\TestCase;
 
-/**
- * @covers \Croct\Sniffs\Methods\CamelCapsMethodNameSniff
- */
+#[CoversClass(\Croct\Sniffs\Methods\CamelCapsMethodNameSniff::class)]
 final class CamelCapsMethodNameSniffTest extends TestCase
 {
     public function testNoErrors() : void

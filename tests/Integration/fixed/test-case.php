@@ -4,6 +4,11 @@ declare(strict_types=1);
 
 namespace Fancy;
 
+use PHPUnit\Framework\Attributes\AfterClass;
+use PHPUnit\Framework\Attributes\Before;
+use PHPUnit\Framework\Attributes\BeforeClass;
+use PHPUnit\Framework\Attributes\TestDox;
+use PHPUnit\Framework\Attributes\UsesClass;
 use PHPUnit\Framework\TestCase as BaseTestCase;
 
 /**
@@ -11,27 +16,25 @@ use PHPUnit\Framework\TestCase as BaseTestCase;
  */
 final class TestCase extends BaseTestCase
 {
-    /**
-     * @beforeClass
-     * @afterClass
-     */
+    #[AfterClass]
+    #[BeforeClass]
     public static function doStuff(): void
     {
     }
 
-    /**
-     * @before
-     */
+    #[Before]
     public function createDependencies(): void
     {
     }
 
     /**
-     * @testdox The method should do stuff
-     * @covers MyClass::test
-     *
-     * @uses MyClass::__construct
+     * @see SomeClass
      */
+    #[AfterClass]
+    #[Before]
+    #[TestDox('The method should do stuff')]
+    #[UsesClass(MyClass::__construct)]
+    #[UsesClass(MyClass::someMethod)]
     public function methodShouldDoStuff(): void
     {
     }
