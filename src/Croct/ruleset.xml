@@ -293,7 +293,7 @@
     <!-- Require comments with single line written as one-liners -->
     <rule ref="SlevomatCodingStandard.Commenting.RequireOneLinePropertyDocComment"/>
 
-    <!-- Require attributes to have no white lines between the attribute and its target -->
+    <!-- Require attributes to have no blank lines between the attribute and its target -->
     <rule ref="SlevomatCodingStandard.Attributes.AttributeAndTargetSpacing">
         <properties>
             <property name="linesCount" value="0"/>
