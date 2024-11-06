@@ -18,7 +18,7 @@
   ],
   "homepage": "https://github.com/croct-tech/coding-standard-php",
   "require": {
-    "php": "^8.1",
+    "php": "^8.3",
     "slevomat/coding-standard": "^8.0",
     "squizlabs/php_codesniffer": "^3.7"
   },
@@ -29,7 +29,7 @@
     "phpstan/phpstan-deprecation-rules": "^1.0",
     "phpstan/phpstan-phpunit": "^1.1",
     "phpstan/phpstan-strict-rules": "^1.2",
-    "phpunit/phpunit": "^10.0"
+    "phpunit/phpunit": "^11.0"
   },
   "prefer-stable": true,
   "autoload": {
