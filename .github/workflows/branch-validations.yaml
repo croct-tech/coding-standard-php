@@ -128,11 +128,12 @@ jobs:
       - name: phpunit
         run: ./vendor/bin/phpunit --coverage-clover ./coverage.xml
 
-- uses: qltysh/qlty-action/coverage@v1
-  with:
-    token: ${{ secrets.QLTY_COVERAGE_TOKEN }}
-    files: ${{ github.workspace }}/coverage.xml
-    skip-errors: false
+      - uses: qltysh/qlty-action/coverage@v1
+        with:
+          token: ${{ secrets.QLTY_COVERAGE_TOKEN }}
+          files: ${{ github.workspace }}/coverage.xml
+          skip-errors: false
+
   phpstan:
     runs-on: ubuntu-latest
     container:
