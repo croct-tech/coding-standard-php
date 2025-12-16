@@ -12,8 +12,6 @@
     <a href="https://github.com/croct-tech/coding-standard-php/actions/workflows/branch-validations.yaml">
         <img alt="Build" src="https://github.com/croct-tech/coding-standard-php/actions/workflows/branch-validations.yaml/badge.svg" />
     </a>
-    <a href="https://qlty.sh/gh/croct-tech/projects/coding-standard-php"><img src="https://qlty.sh/badges/1aeadae2-8606-4c3a-b59a-395b2cda23f1/coverage.svg" alt="Code Coverage" /></a>
-    <a href="https://qlty.sh/gh/croct-tech/projects/coding-standard-php"><img src="https://qlty.sh/badges/1aeadae2-8606-4c3a-b59a-395b2cda23f1/maintainability.svg" alt="Maintainability" /></a>
     <img alt="License" src="https://img.shields.io/badge/license-proprietary-lightgrey" />
     <br />
     <br />
