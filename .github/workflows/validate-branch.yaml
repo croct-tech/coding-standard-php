@@ -1,4 +1,4 @@
-name: Validations
+name: Validate branch
 
 on:
   push:
@@ -12,8 +12,8 @@ on:
       - opened
 
 jobs:
-  validations:
-    uses: croct-tech/github-workflows/.github/workflows/php-validations.yml@unify-workflows
+  validate:
+    uses: croct-tech/github-workflows/.github/workflows/php-validations.yml@master
     secrets:
       REPMAN_TOKEN: ${{ secrets.REPMAN_TOKEN }}
 
