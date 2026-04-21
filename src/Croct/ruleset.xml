@@ -509,9 +509,10 @@
         </properties>
     </rule>
     <!-- Enforce the format of union type hints -->
-    <rule ref="SlevomatCodingStandard.TypeHints.UnionTypeHintFormat">
+    <rule ref="SlevomatCodingStandard.TypeHints.DNFTypeHintFormat">
         <properties>
-            <property name="withSpaces" value="no"/>
+            <property name="withSpacesAroundOperators" value="no"/>
+            <property name="withSpacesInsideParentheses" value="no"/>
             <property name="shortNullable" value="yes"/>
         </properties>
     </rule>
