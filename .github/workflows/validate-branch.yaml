@@ -11,13 +11,17 @@ on:
       - synchronize
       - opened
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}
+  cancel-in-progress: true
+
 jobs:
   validate:
     uses: croct-tech/github-workflows/.github/workflows/php-validations.yml@master
     secrets:
       REPMAN_TOKEN: ${{ secrets.REPMAN_TOKEN }}
 
-  sniff:
+  sniffs:
     runs-on: ubuntu-latest
     container:
       image: crocttech/php-base-image:php8.1-dev
