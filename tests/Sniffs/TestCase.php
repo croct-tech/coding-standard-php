@@ -84,8 +84,11 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
 
         $sniffCode = \sprintf('%s.%s', static::getSniffName(), $code);
 
+        /** @var array<array<array<string|int>>> $errorsOnLine */
+        $errorsOnLine = $errors[$line];
+
         self::assertTrue(
-            self::hasError($errors[$line], $sniffCode, $message),
+            self::hasError($errorsOnLine, $sniffCode, $message),
             \sprintf(
                 'Expected error %s%s, but none found on line %d.%sErrors found on line %d:%s%s%s',
                 $sniffCode,
@@ -94,7 +97,7 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
                 \PHP_EOL . \PHP_EOL,
                 $line,
                 \PHP_EOL,
-                self::getFormattedErrors($errors[$line]),
+                self::getFormattedErrors($errorsOnLine),
                 \PHP_EOL
             )
         );
@@ -106,13 +109,17 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
     protected static function assertNoSniffError(File $phpcsFile, int $line) : void
     {
         $errors = $phpcsFile->getErrors();
+
+        /** @var array<array<array<string|int>>> $errorsOnLine */
+        $errorsOnLine = $errors[$line];
+
         self::assertFalse(
             isset($errors[$line]),
             \sprintf(
                 'Expected no error on line %s, but found:%s%s%s',
                 $line,
                 \PHP_EOL . \PHP_EOL,
-                isset($errors[$line]) ? self::getFormattedErrors($errors[$line]) : '',
+                isset($errors[$line]) ? self::getFormattedErrors($errorsOnLine) : '',
                 \PHP_EOL
             )
         );
@@ -161,11 +168,12 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
      */
     protected static function getSniffClassReflection() : ReflectionClass
     {
+        /** @var array<class-string, ReflectionClass<Sniff>> $reflections */
         static $reflections = [];
 
-        /** @phpstan-var class-string $className */
         $className = static::getSniffClassName();
 
+        /** @var class-string<Sniff> $className */
         return $reflections[$className] ?? $reflections[$className] = new ReflectionClass($className);
     }
 
@@ -211,7 +219,7 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
                         \PHP_EOL,
                         \array_map(
                             static function (array $error) : string {
-                                return \sprintf("\t%s: %s", $error['source'], $error['message']);
+                                return \sprintf("\t%s: %s", (string) $error['source'], (string) $error['message']);
                             },
                             $errors
                         )
@@ -221,5 +229,4 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
             )
         );
     }
-
 }

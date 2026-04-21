@@ -43,7 +43,6 @@
     <rule ref="Generic.Formatting.MultipleStatementAlignment">
         <properties>
             <property name="maxPadding" value="1" />
-            <property name="error" value="true"/>
         </properties>
     </rule>
     <!-- Force whitespace after a type cast -->
@@ -633,7 +632,7 @@
     <!-- Disallow blank line after function opening brace -->
     <rule ref="Squiz.WhiteSpace.FunctionOpeningBraceSpace"/>
     <!-- Require space after language constructs -->
-    <rule ref="Squiz.WhiteSpace.LanguageConstructSpacing"/>
+    <rule ref="Generic.WhiteSpace.LanguageConstructSpacing"/>
     <!-- Require space around logical operators -->
     <rule ref="Squiz.WhiteSpace.LogicalOperatorSpacing"/>
     <!-- Disallow spaces around `->` operator -->
