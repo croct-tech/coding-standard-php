@@ -47,6 +47,8 @@
     </rule>
     <!-- Force whitespace after a type cast -->
     <rule ref="Generic.Formatting.SpaceAfterCast"/>
+    <!-- Require space after language constructs -->
+    <rule ref="Generic.WhiteSpace.LanguageConstructSpacing"/>
     <!-- Disallow PHP 4 constructors -->
     <rule ref="Generic.NamingConventions.ConstructorName"/>
     <!-- Disallow backtick operator -->
@@ -632,8 +634,6 @@
     <rule ref="Squiz.WhiteSpace.CastSpacing"/>
     <!-- Disallow blank line after function opening brace -->
     <rule ref="Squiz.WhiteSpace.FunctionOpeningBraceSpace"/>
-    <!-- Require space after language constructs -->
-    <rule ref="Generic.WhiteSpace.LanguageConstructSpacing"/>
     <!-- Require space around logical operators -->
     <rule ref="Squiz.WhiteSpace.LogicalOperatorSpacing"/>
     <!-- Disallow spaces around `->` operator -->
