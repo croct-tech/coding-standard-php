@@ -1,0 +1,56 @@
+name: Validate branch
+
+on:
+  push:
+    tags-ignore:
+      - '**'
+    branches:
+      - master
+  pull_request:
+    types:
+      - synchronize
+      - opened
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    uses: croct-tech/github-workflows/.github/workflows/php-validations.yml@master
+    secrets:
+      REPMAN_TOKEN: ${{ secrets.REPMAN_TOKEN }}
+
+  sniffs:
+    runs-on: ubuntu-latest
+    container:
+      image: crocttech/php-base-image:php8.1-dev
+    env:
+      PACKAGE: coding-standard
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Composer cache
+        uses: actions/cache@v4
+        with:
+          key: composer-${{ hashFiles('**/composer.lock') }}
+          path: ${{ github.workspace }}/.cache
+      - name: Vendor cache
+        uses: actions/cache@v4
+        with:
+          key: vendor-${{ hashFiles('**/composer.lock') }}
+          path: ${{ github.workspace }}/vendor
+      - name: Tools cache
+        uses: actions/cache@v4
+        with:
+          key: tools
+          path: ${{ github.workspace }}/.cache
+
+      - name: Install dependencies
+        env:
+          COMPOSER_CACHE_DIR: ${{ github.workspace }}/.cache
+        run: |-
+          composer config --global --auth http-basic.croct.repo.repman.io token "${{ secrets.REPMAN_TOKEN }}"
+          composer install --no-progress --no-interaction --prefer-dist --optimize-autoloader
+
+      - run: ./run-sniffs-tests.sh
