@@ -17,14 +17,14 @@ concurrency:
 
 jobs:
   validate:
-    uses: croct-tech/github-workflows/.github/workflows/php-validations.yml@master
+    uses: croct-tech/github-workflows/.github/workflows/php-validations.yml@bump-php
     secrets:
       REPMAN_TOKEN: ${{ secrets.REPMAN_TOKEN }}
 
   sniffs:
     runs-on: ubuntu-latest
     container:
-      image: crocttech/php-base-image:php8.1-dev
+      image: crocttech/php-base-image:php8.5-dev
     env:
       PACKAGE: coding-standard
     steps:
