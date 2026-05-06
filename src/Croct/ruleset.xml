@@ -7,8 +7,6 @@
 >
     <description>The Croct Coding Standard.</description>
 
-    <config name="installed_paths" value="../../slevomat/coding-standard"/>
-
     <!-- Croct sniffs -->
 
     <!-- Force camel-cased names, except for constant-like methods -->
@@ -395,6 +393,7 @@
             <property name="allowFullyQualifiedGlobalClasses" value="true"/>
             <property name="allowFullyQualifiedGlobalFunctions" value="true"/>
             <property name="allowFullyQualifiedGlobalConstants" value="true"/>
+            <property name="allowFullyQualifiedExceptions" value="true"/>
         </properties>
     </rule>
     <!-- Requires only one namespace in a file -->
