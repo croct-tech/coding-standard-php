@@ -7,8 +7,6 @@
 >
     <description>The Croct Coding Standard.</description>
 
-    <config name="installed_paths" value="../../slevomat/coding-standard"/>
-
     <!-- Croct sniffs -->
 
     <!-- Force camel-cased names, except for constant-like methods -->
@@ -43,11 +41,12 @@
     <rule ref="Generic.Formatting.MultipleStatementAlignment">
         <properties>
             <property name="maxPadding" value="1" />
-            <property name="error" value="true"/>
         </properties>
     </rule>
     <!-- Force whitespace after a type cast -->
     <rule ref="Generic.Formatting.SpaceAfterCast"/>
+    <!-- Require space after language constructs -->
+    <rule ref="Generic.WhiteSpace.LanguageConstructSpacing"/>
     <!-- Disallow PHP 4 constructors -->
     <rule ref="Generic.NamingConventions.ConstructorName"/>
     <!-- Disallow backtick operator -->
@@ -394,6 +393,7 @@
             <property name="allowFullyQualifiedGlobalClasses" value="true"/>
             <property name="allowFullyQualifiedGlobalFunctions" value="true"/>
             <property name="allowFullyQualifiedGlobalConstants" value="true"/>
+            <property name="allowFullyQualifiedExceptions" value="true"/>
         </properties>
     </rule>
     <!-- Requires only one namespace in a file -->
@@ -510,9 +510,10 @@
         </properties>
     </rule>
     <!-- Enforce the format of union type hints -->
-    <rule ref="SlevomatCodingStandard.TypeHints.UnionTypeHintFormat">
+    <rule ref="SlevomatCodingStandard.TypeHints.DNFTypeHintFormat">
         <properties>
-            <property name="withSpaces" value="no"/>
+            <property name="withSpacesAroundOperators" value="no"/>
+            <property name="withSpacesInsideParentheses" value="no"/>
             <property name="shortNullable" value="yes"/>
         </properties>
     </rule>
@@ -632,8 +633,6 @@
     <rule ref="Squiz.WhiteSpace.CastSpacing"/>
     <!-- Disallow blank line after function opening brace -->
     <rule ref="Squiz.WhiteSpace.FunctionOpeningBraceSpace"/>
-    <!-- Require space after language constructs -->
-    <rule ref="Squiz.WhiteSpace.LanguageConstructSpacing"/>
     <!-- Require space around logical operators -->
     <rule ref="Squiz.WhiteSpace.LogicalOperatorSpacing"/>
     <!-- Disallow spaces around `->` operator -->

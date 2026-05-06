@@ -24,4 +24,3 @@ parameters:
     checkTooWideReturnTypesInProtectedAndPublicMethods: true
     checkUninitializedProperties: true
     checkMissingCallableSignature: true
-    checkGenericClassInNonGenericObjectType: true
