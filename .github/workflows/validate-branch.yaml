@@ -17,7 +17,7 @@ concurrency:
 
 jobs:
   validate:
-    uses: croct-tech/github-workflows/.github/workflows/php-validations.yml@bump-php
+    uses: croct-tech/github-workflows/.github/workflows/php-validations.yml@master
     secrets:
       REPMAN_TOKEN: ${{ secrets.REPMAN_TOKEN }}
 
