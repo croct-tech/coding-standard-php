@@ -28,20 +28,20 @@ jobs:
     env:
       PACKAGE: coding-standard
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Composer cache
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           key: composer-${{ hashFiles('**/composer.lock') }}
           path: ${{ github.workspace }}/.cache
       - name: Vendor cache
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           key: vendor-${{ hashFiles('**/composer.lock') }}
           path: ${{ github.workspace }}/vendor
       - name: Tools cache
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           key: tools
           path: ${{ github.workspace }}/.cache
