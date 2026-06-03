@@ -9,10 +9,10 @@
 </p>
 <p align="center">
     <img alt="Language" src="https://img.shields.io/badge/language-PHP-blue" />
-    <a href="https://github.com/croct-tech/coding-standard-php/actions/workflows/branch-validations.yaml">
-        <img alt="Build" src="https://github.com/croct-tech/coding-standard-php/actions/workflows/branch-validations.yaml/badge.svg" />
+    <a href="https://github.com/croct-tech/coding-standard-php/actions/workflows/validate-branch.yaml">
+        <img alt="Build" src="https://github.com/croct-tech/coding-standard-php/actions/workflows/validate-branch.yaml/badge.svg" />
     </a>
-    <img alt="License" src="https://img.shields.io/badge/license-proprietary-lightgrey" />
+    <img alt="License" src="https://img.shields.io/badge/license-MIT-blue" />
     <br />
     <br />
     <a href="https://github.com/croct-tech/coding-standard-php/releases">📦 Releases</a>
@@ -60,8 +60,6 @@ Then, to run all tests:
 composer test
 ```
 
-## Copyright Notice
+## License
 
-Copyright © 2015-2020 Croct Limited, All Rights Reserved.
-
-All information contained herein is, and remains the property of Croct Limited. The intellectual, design and technical concepts contained herein are proprietary to Croct Limited s and may be covered by U.S. and Foreign Patents, patents in process, and are protected by trade secret or copyright law. Dissemination of this information or reproduction of this material is strictly forbidden unless prior written permission is obtained from Croct Limited.
+This library is licensed under the [MIT license](LICENSE).
