@@ -1,7 +1,7 @@
 {
   "name": "croct/coding-standard",
   "description": "A set of Code Sniffer rules applied to all Croct PHP projects.",
-  "license": "proprietary",
+  "license": "MIT",
   "type": "phpcodesniffer-standard",
   "keywords": [
     "croct",
@@ -17,6 +17,10 @@
     }
   ],
   "homepage": "https://github.com/croct-tech/coding-standard-php",
+  "support": {
+    "issues": "https://github.com/croct-tech/coding-standard-php/issues",
+    "source": "https://github.com/croct-tech/coding-standard-php"
+  },
   "require": {
     "php": "^8.5",
     "slevomat/coding-standard": "^8.28",
