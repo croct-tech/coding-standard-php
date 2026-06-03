@@ -9,9 +9,7 @@
 </p>
 <p align="center">
     <img alt="Language" src="https://img.shields.io/badge/language-PHP-blue" />
-    <a href="https://github.com/croct-tech/coding-standard-php/actions/workflows/validate-branch.yaml">
-        <img alt="Build" src="https://github.com/croct-tech/coding-standard-php/actions/workflows/validate-branch.yaml/badge.svg" />
-    </a>
+    <a href="https://github.com/croct-tech/coding-standard-php/actions/workflows/validate-branch.yaml"><img alt="Build" src="https://github.com/croct-tech/coding-standard-php/actions/workflows/validate-branch.yaml/badge.svg" /></a>
     <img alt="License" src="https://img.shields.io/badge/license-MIT-blue" />
     <br />
     <br />
